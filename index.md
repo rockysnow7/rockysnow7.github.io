@@ -1,8 +1,3 @@
 # Moss
 
-By rockysnow7  
-
-(test)
-In this blog, I will write about all manner of detailed, interesting, beautiful things.  
-They will likely centre around maths, computer science, coding, etc., but may occasionally be different.  
-Enjoy!
+[Thoughts on the simulation](posts/philosophy/thoughts-on-the-simulation.md)
