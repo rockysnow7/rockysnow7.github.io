@@ -1,1 +1,11 @@
+lsi: false
+safe: true
+source: https://github.com/rockysnow7/rockysnow7.github.io
+incremental: false
+highlighter: rouge
+gist:
+    noscript: false
+kramdown:
+    math_engine: mathjax
+    syntax_highlighter: rouge
 title: Moss

@@ -1,5 +1,3 @@
-# Moss
-
 By rockysnow7  
 
 In this blog, I will write about all manner of detailed, interesting, beautiful things.  
