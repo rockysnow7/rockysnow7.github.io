@@ -12,6 +12,8 @@ fun in that? I find it unlikely our being-in-a-simulation will affect anything i
 belief is less like a religion, and more like reading Harry Potter - fun while it lasted, but probably 
 not life-altering.  
 
+---
+
 There are many things we don't know about this program we call the universe. Firstly, how does it work? 
 Having thought about this for a while, I came to the conclusion that it is either akin to a video-game 
 or a physics simulation.  
@@ -50,6 +52,8 @@ So under the particle simulation, we may assume that
 2. We have existed for the time we remember, and the universe began as science currently believes rather 
 than at some state decided by its creators.
 
+---
+
 Now, onto the physical possibilities.  
 
 First of all, conservation of energy wouldn't really exist in either model. They could just write a 
@@ -62,6 +66,8 @@ point).
 Of course, we have no idea how physics works in our creators' universe. It could be the same as ours if we 
 are in a Devs-like scenario (i.e. they are simulating the past). Just think - you could be your own creator. 
 Or, it is entirely different.  
+
+---
 
 In conclusion, we have no idea if this is a simulation, why it would be a simulation, what it would be like 
 outside the simulation, whether we could break out of the simulation, or really anything else about the 
