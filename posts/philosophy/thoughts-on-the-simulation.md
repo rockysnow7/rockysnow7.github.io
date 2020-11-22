@@ -66,4 +66,8 @@ Or, it is entirely different.
 In conclusion, we have no idea if this is a simulation, why it would be a simulation, what it would be like 
 outside the simulation, whether we could break out of the simulation, or really anything else about the 
 simulation. But it's fun to think about. Just in case we do have intelligent creators - a God, a programmer, 
-or both - we should probably strive to be good people and create intelligence and beauty.
+or both - we should probably strive to be good people and create intelligence and beauty. After all, if I 
+were God, I'd reward people for those things.  
+
+Maybe I am God, putting this message into the simulation for you. Or maybe I have no consciousness. Or 
+maybe I only just came into existence.
