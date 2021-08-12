@@ -1,3 +1,7 @@
+A General Reinforcement Learning Agent
+
+---
+
 This is written more as code than math, as apparently GitHub doesn't support LaTeX.
 
 ---
@@ -9,13 +13,14 @@ If Carlsen were to play Stockfish at chess, Stockfish would win
 [by a landslide](https://www.quora.com/Can-Magnus-Carlsen-draw-Stockfish).
 
 
-```
+As Python-esque pseudocode:
+```python3
 self.states_set.append(env.state)
 
-result = none
-while result == none
+result = None
+while result == None:
 	predicted_states = {move: self.predict(self.compress(env.state), move)) for move in env.legal_moves}
-	best_move = move with max self.evaluate(predicted_states[move])
+	best_move = max(predicted_states, key=self.evaluate(predicted_states[move]))
 	env.do_move(best_move)
 
 	self.states_set.append(env.state)
@@ -24,6 +29,7 @@ while result == none
 
 	self.train_compressor()
 	self.train_predictor()
+
 
 self.train_evaluator()
 ```
