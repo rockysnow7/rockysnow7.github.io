@@ -12,7 +12,7 @@ If Carlsen were to play Stockfish at chess, Stockfish would win
 
 
 As Python-esque pseudocode:
-```python3
+```python
 self.states_set.append(env.state)
 
 result = None
