@@ -1,5 +1,7 @@
-1. Save the observed state .
-2. Train C, P, E.
-3. Act to maximise the 
+This is written more as code than math, as apparently GitHub doesn't support LaTeX.
 
-Pythagoras is $`a^2 + b^2 = c^2`$.
+---
+
+> "The intelligence of a system is a measure of its skill-acquisition efficiency over a scope of tasks with respect to priors, experience, and generalization difficulty." - François Chollet, **On the Measure of Intelligence**
+
+
