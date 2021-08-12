@@ -1,4 +1,4 @@
-A General Reinforcement Learning Agent
+## A General Reinforcement Learning Agent
 
 ---
 
