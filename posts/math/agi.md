@@ -1,7 +1,5 @@
 ## A General Reinforcement Learning Agent
 
----
-
 This is written more as code than math, as apparently GitHub doesn't support LaTeX.
 
 ---
