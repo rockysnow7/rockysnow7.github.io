@@ -44,7 +44,7 @@ The saved data is kept between games. This algorithm can be repeated to increase
 compressor, predictor, and evaluator, therefore increasing the agent's chance of winning the game.  
 
 The following is an example implementation in Python3:
-```python=
+```python
 self.states_set.append([])
 self.moves_set.append([])
 self.eval_set.append([])
