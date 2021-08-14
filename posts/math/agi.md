@@ -4,6 +4,8 @@ This is written more as code than math, as apparently GitHub doesn't support LaT
 
 ---
 
+### Introduction
+
 Stockfish is
 [one of](https://en.wikipedia.org/wiki/Top_Chess_Engine_Championship#Tournament_results_%28TCEC%29)
 the best chess engines of all time. Magnus Carlsen is often said to be the best chess player of all time.  
@@ -21,6 +23,8 @@ the system and a set of legal moves, the playing of any of which changes the sta
 way. This happens to the other agent, and is repeated until the state of the system follows some particular
 pattern, at which point either one of the players has won or the result is a draw (this covers most
 turn-based games, not just chess and draughts).  
+
+### RL Agent
 
 To allow the agent to understand the system despite these vague expectations, it must have 3 particular
 functions:
@@ -73,4 +77,8 @@ self.train_evaluator()
 Note that it separates data from different games to avoid implying that the last move of one game leads to
 the first state of the next. The definition and training of the compressor, predictor, and evaluator are
 omitted, but all are neural networks, with the compressor being an autoencoder, and are trained on
-`states_set`, `states_set` and `moves_set`, and `states_set` and `eval_set` respectively.
+`states_set`, `states_set` and `moves_set`, and `states_set` and `eval_set` respectively.  
+
+### General Intelligence
+
+This 
