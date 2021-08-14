@@ -1,6 +1,6 @@
 ## A General Reinforcement Learning Agent
 
-This is written more as code than math, as apparently GitHub doesn't support LaTeX.
+This is written more as code than math, as apparently GitHub doesn't support LaTeX (smh).
 
 ---
 
@@ -10,17 +10,24 @@ the best chess engines of all time. Magnus Carlsen is often said to be the best 
 
 If Carlsen were to play Stockfish at chess, Stockfish would win
 [by a landslide](https://www.quora.com/Can-Magnus-Carlsen-draw-Stockfish). If they were to play draughts,
-not only would Carlsen (probably) win, but Stockfish would not be able to understand the problem:
-chess has fundamental features not shared by draughts. So to create an agent capable of playing both games,
-we would need to find shared features; this process would be repeated with new games, finding more
-fundamental shared features. Over time, fewer features constrain it, and eventually, with enough games
-considered, the agent will be able to be trained to play any game considered in its development (and more!).  
+not only would Carlsen win, but Stockfish would not be able to understand the problem: chess has
+fundamental features not shared by draughts. So to create an agent capable of playing both games, we would
+need to find shared features; this process would be repeated with new games, finding more fundamental
+shared features. Over time, fewer features constrain it, and eventually, with enough games considered, the
+agent will be able to be trained to play any game considered in its development (and more!).  
 
 So, what are the shared features of chess and draughts? At any time, the agent gets a view of the state of
 the system and a set of legal moves, the playing of any of which changes the state of the system in some
 way. This happens to the other agent, and is repeated until the state of the system follows some particular
 pattern (this covers most turn-based games, not just chess and draughts).  
 
+To allow the agent to understand the system despite these vague expectations, it must have 3 particular
+functions:
+- a `compressor` that takes a system state and returns a smaller representation of it.
+- a `predictor` that takes a compressed system state and a move and returns a compressed prediction of the
+state after the move has been played.
+- an `evaluator` that takes a system state and returns a real number between -1 and 1, with -1 meaning the
+opponent will win, 0 meaning the state is neutral, and 1 meaning it will win.
 
 In Python:
 ```python
