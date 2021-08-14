@@ -32,12 +32,12 @@ state after the move has been played.
 meaning the opponent will win, 0 meaning the state is neutral, and 1 meaning it will win.  
 
 With these functions, the agent can perform the following algorithm each time it plays a given game:
-0. Save the current system state and the agent's evaluation of it.
-1. Move to maximise the agent's evalutation of the predicted next state.
-2. Save the current system state, the move played, and the agent's evaluation of the current system state.
-3. Train the agent's compressor and predictor from the saved states and moves.
-4. While the game is still being played, repeat steps 1-4.
-5. Given a result between -1 and 1, add the result divided by the number of moves played in the past game
+1. Save the current system state and the agent's evaluation of it.
+2. Move to maximise the agent's evalutation of the predicted next state.
+3. Save the current system state, the move played, and the agent's evaluation of the current system state.
+4. Train the agent's compressor and predictor from the saved states and moves.
+5. While the game is still being played, repeat steps 2-5.
+6. Given a result between -1 and 1, add the result divided by the number of moves played in the past game
 to the saved evaluations of states from the past game.  
 
 The saved data is kept between games. This algorithm can be repeated to increase the accuracy of the
