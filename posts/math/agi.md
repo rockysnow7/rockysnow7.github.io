@@ -19,38 +19,58 @@ agent will be able to be trained to play any game considered in its development 
 So, what are the shared features of chess and draughts? At any time, the agent gets a view of the state of
 the system and a set of legal moves, the playing of any of which changes the state of the system in some
 way. This happens to the other agent, and is repeated until the state of the system follows some particular
-pattern (this covers most turn-based games, not just chess and draughts).  
+pattern, at which point either one of the players has won or the result is a draw (this covers most
+turn-based games, not just chess and draughts).  
 
 To allow the agent to understand the system despite these vague expectations, it must have 3 particular
 functions:
-- a `compressor` that takes a system state and returns a smaller representation of it.
-- a `predictor` that takes a compressed system state and a move and returns a compressed prediction of the
+- A *compressor* that takes a system state and returns a smaller representation of it. This forces the
+agent to focus on the key features of the system.
+- A *predictor* that takes a compressed system state and a move and returns a compressed prediction of the
 state after the move has been played.
-- an `evaluator` that takes a system state and returns a real number between -1 and 1, with -1 meaning the
-opponent will win, 0 meaning the state is neutral, and 1 meaning it will win.
+- An *evaluator* that takes a compressed system state and returns a real number between -1 and 1, with -1
+meaning the opponent will win, 0 meaning the state is neutral, and 1 meaning it will win.  
 
-In Python:
-```python
-self.states_set.append(env.state)
-self.eval_set.append(self.evaluate(env.state))
+With these functions, the agent can perform the following algorithm each time it plays a given game:
+0. Save the current system state and the agent's evaluation of it.
+1. Move to maximise the agent's evalutation of the predicted next state.
+2. Save the current system state, the move played, and the agent's evaluation of the current system state.
+3. Train the agent's compressor and predictor from the saved states and moves.
+4. While the game is still being played, repeat steps 1-4.
+5. Given a result between -1 and 1, add the result divided by the number of moves played in the past game
+to the saved evaluations of states from the past game.  
+
+The saved data is kept between games. This algorithm can be repeated to increase the accuracy of the
+compressor, predictor, and evaluator, therefore increasing the agent's chance of winning the game.  
+
+The following is an example implementation in Python3:
+```python=
+self.states_set.append([])
+self.moves_set.append([])
+self.eval_set.append([])
+
+self.states_set[-1].append(env.state)
+self.eval_set[-1].append(self.evaluate(env.state))
 
 result = None
-t = 0
 while result == None:
-	predicted_states = {move: self.predict(self.compress(env.state), move)) for move in env.legal_moves}
+	predicted_states = {move: self.predict(self.compress(env.state), move) for move in env.legal_moves()}
 	best_move = max(predicted_states, key=self.evaluate(predicted_states[move]))
 	env.do_move(best_move)
 
-	self.states_set.append(env.state)
-	self.moves_set.append(best_move)
-	self.eval_set.append(self.evaluate(self.compress(env.state)))
+	self.states_set[-1].append(env.state)
+	self.moves_set[-1].append(best_move)
+	self.eval_set[-1].append(self.evaluate(self.compress(env.state)))
 
 	self.train_compressor()
 	self.train_predictor()
 
-	t += 1
-
-for i in range(-1, -t-1, -1):
-	self.eval_set[i] += result / t
+for i in range(len(self.eval_set[-1])):
+	self.eval_set[-1][i] += result / len(self.eval_set[-1])
 self.train_evaluator()
 ```
+
+Note that it separates data from different games to avoid implying that the last move of one game leads to
+the first state of the next. The definition and training of the compressor, predictor, and evaluator are
+omitted, but all are neural networks, with the compressor being an autoencoder, and are trained on
+`states_set`, `states_set` and `moves_set`, and `states_set` and `eval_set` respectively.
