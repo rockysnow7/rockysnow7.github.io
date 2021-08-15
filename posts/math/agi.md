@@ -129,4 +129,4 @@ be calculated at any time.
 Aside from being difficult, choosing a utility function is also dangerous.
 
 
-$e = mc^2$
+$$e = mc^2$$
