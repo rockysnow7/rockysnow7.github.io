@@ -1,3 +1,7 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
 ## An Idea for a Generally-Intelligent Reinforcement Learning Agent
 
 This is written more as code than math, as apparently GitHub doesn't support LaTeX (smh).
@@ -6,17 +10,15 @@ This is written more as code than math, as apparently GitHub doesn't support LaT
 
 ### Introduction
 
-Stockfish is
-[one of](https://en.wikipedia.org/wiki/Top_Chess_Engine_Championship#Tournament_results_%28TCEC%29)
-the best chess engines of all time. Magnus Carlsen is often said to be the best chess player of all time.  
-
-If Carlsen were to play Stockfish at chess, Stockfish would win
-[by a landslide](https://www.quora.com/Can-Magnus-Carlsen-draw-Stockfish). If they were to play draughts,
-not only would Carlsen win, but Stockfish would not be able to understand the problem: chess has
-fundamental features not shared by draughts. So to create an agent capable of playing both games, we would
-need to find shared features; this process would be repeated with new games, finding more fundamental
-shared features. Over time, fewer features constrain it, and eventually, with enough games considered, the
-agent will be able to be trained to play any game considered in its development (and more!).  
+Stockfish is [one of](https://en.wikipedia.org/wiki/Top_Chess_Engine_Championship#Tournament_results_
+%28TCEC%29) the best chess engines of all time. Magnus Carlsen is often said to be the best chess player of
+all time. If Carlsen were to play Stockfish at chess, Stockfish would win [by a landslide](https://www.quora
+.com/Can-Magnus-Carlsen-draw-Stockfish). If they were to play draughts, not only would Carlsen win, but
+Stockfish would not be able to understand the problem: chess has fundamental features not shared by draughts.
+So to create an agent capable of playing both games, we would need to find shared features; this process
+would be repeated with new games, finding more fundamental shared features. Over time, fewer features
+constrain it, and eventually, with enough games considered, the agent will be able to be trained to play any
+game considered in its development (and more!).  
 
 So, what are the shared features of chess and draughts? At any time, the agent gets a view of the state of
 the system and a set of legal moves, the playing of any of which changes the state of the system in some
@@ -103,13 +105,28 @@ In short, the entire entity is a collection of agents (known hereafter as *syste
 interact with specific systems in order to maximise their chance of winning, all controlled by a central
 agent that acts to maximise some arbitrary function.
 
-### What Should the Utility Function Be?
+### What Should the Split Criteria Be?
 
-The vagueness of this description is both positive and daunting: the agent can do whatever you want, but
-you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the
+To keep the agent unsupervised, we will use [k-means clustering](https://en.wikipedia.org/wiki/K-
+means_clustering) to group input data into distinct systems, and the [Elbow Method and Silhouette Method](
+https://medium.com/analytics-vidhya/how-to-determine-the-optimal-k-for-k-means-708505d204eb) to find `k`.
+Of course, many clustering algorithms could be used (and may be found to be more suited), but k-means is
+popular and simple.
+
+### The Utility Function
+
+The vagueness of the agent's description is both positive and daunting: the agent can do whatever you want,
+but you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the
 world-compression ratio through exploration, which Juergen Schmidhuber claims would lead to the agent
 having subjective experiences (of course, this would have major moral implications, but we are concerned
 only with the engineering of such an agent). Schmidhuber explains the method of exploration in the paper
-linked, and I recommend you read it.
+linked, and I highly recommend you read it.  
 
-### What Should the Split Criteria Be?
+The utility function will be maximised by the agent having an evaluator and predictor similar to those of
+the system agents; both will be updated after each time step, since the utility function should be able to
+be calculated at any time.  
+
+Aside from being difficult, choosing a utility function is also dangerous.
+
+
+$e = mc^2$
