@@ -23,6 +23,7 @@ So, the architecture of a single system agent is:
 ![System agent architecture](../images/math/agi/agi-2.svg)
 
 Specifically, a system will be defined as a cluster of points in the latent space of an autoencoder trained on
-states previously observed by the supervisor. So if the encoded form of an input is placed in cluster \\\(n\\\),
-it will be passed to system agent \\\(n\\\) for analysis. If a new cluster is made, the system agent for the
-nearest cluster is duplicated and assigned the new cluster.
+states previously observed by the supervisor. So if the encoded form of an input is placed in cluster *n*, the
+input will be passed to system agent *n* for analysis. If a new cluster is made, the system agent for the
+nearest cluster is duplicated and assigned the new cluster. In this way, the agent's understanding of the world
+in which it lives is constantly being updated and its actions optimised.
