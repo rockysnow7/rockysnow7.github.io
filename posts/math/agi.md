@@ -54,7 +54,7 @@ Just as these system agents learn to win in specific systems, the supervisor use
 some function of the environment (the *utility function*).
 
 {% raw %}
-	agent \(n\) for analysis
+ agent \(n\) for analysis
 {% endraw %}
 
 ### The Utility Function
