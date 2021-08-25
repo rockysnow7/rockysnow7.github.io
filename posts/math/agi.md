@@ -38,7 +38,7 @@ their evaluation of each legal move to the supervisor, which will act on it. Thi
 the system agent predicting the evolution of the game, first with a given move, then with a neural net trained
 to predict the state after the supervisor has acted, before passing it through a neural net trained on pairs of
 states and the sum of the outcome of the game divided by the number of states in the game and the original
-evaluation of the state.
+evaluation of the state (this will be explained more later; it's hard to describe math in English).
 
 So, the architecture of a single system agent is:
 
@@ -50,8 +50,12 @@ input will be passed to system agent *n* for analysis. If a new cluster is made,
 nearest cluster is duplicated and assigned the new cluster. In this way, the agent's understanding of the world
 in which it lives is constantly being updated and its actions optimised.  
 
-Just as these system agents learn to win in specific systems, the supervisor uses the system agents to win
-overall. This 
+Just as these system agents learn to win in specific systems, the supervisor uses the system agents to maximise
+some function of the environment (the *utility function*).
+
+{% raw %}
+agent \(n\) for analysis
+{% endraw %}
 
 ### The Utility Function
 
