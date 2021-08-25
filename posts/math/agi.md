@@ -45,36 +45,36 @@ So, the architecture of a single system agent is:
 ![System agent architecture](../images/math/agi/agi-2.svg)
 
 Specifically, a system will be defined as a cluster of points in the latent space of an autoencoder trained on
-states previously observed by the supervisor. So if the encoded form of an input is placed in cluster $n$, the
-input will be passed to system agent $n$ for analysis. If a new cluster is made, the system agent for the
+states previously observed by the supervisor. So if the encoded form of an input is placed in cluster *n*, the
+input will be passed to system agent *n* for analysis. If a new cluster is made, the system agent for the
 nearest cluster is duplicated and assigned the new cluster. In this way, the agent's understanding of the world
 in which it lives is constantly being updated and its actions optimised.  
 
 Just as these system agents learn to win in specific systems, the supervisor uses the system agents to maximise
-some function of the environment (the *utility function*).
+some function of the environment (the *utility function*). It learns to predict the state of the world in the
+same way as a system agent, and maximises the utility of the predicted environment state multiplied by its
+probability of reaching this state. The supervisor must then save its goal, and will choose the move which is
+closest to its goal. Here, we see the architecture of the supervisor:
+
+![Supervisor architecture](../images/math/agi/agi-3.svg)
 
 ### The Utility Function
 
-The vagueness of the agent's description is both positive and daunting: the agent can do whatever you want,
-but you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the
-world-compression ratio through exploration, which Juergen Schmidhuber claims would lead to the agent
-having subjective experiences (of course, this would have major moral implications, but we are concerned
-only with the engineering of such an agent). Schmidhuber explains the method of exploration in the paper
-linked, and I highly recommend you read it.  
-
-The utility function will be maximised by the agent having an evaluator and predictor similar to those of
-the system agents; both will be updated after each time step, since the utility function should be able to
-be calculated at any time.  
+The vagueness of the agent's description is both positive and daunting: the agent can do whatever you want, but
+you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the supervisor's
+compression ratio through exploration, which Juergen Schmidhuber claims would lead to the agent having
+subjective experiences. Schmidhuber explains the method of exploration in the paper linked, and I highly
+recommend you read it.  
 
 Aside from being difficult, choosing a utility function [is also dangerous](https://intelligence.org/2016/12
 /28/ai-alignment-why-its-hard-and-where-to-start/). A famous example of this is the Paperclip Maximiser, a
 thought experiment in which a superintelligent AI is told to maximise the number of paperclips in the world.
 Initially, this sounds harmless (if a little useless) - you may imagine that the agent would raise money to
 create factories dedicated to the production of paperclips, perhaps acting similarly to an entrepreneur. But
-the utility function (i.e. the number of paperclips) does not take into account the importance of human
-life; though the agent will not necessarily harm humans, it would do so if it helped to creaate paperclips.
-So, it isn't unreasonable to imagine it creating paperclips at the the cost of human civilisation, given
-enough power and intelligence.
+the utility function (i.e. the number of paperclips) does not take into account the importance of human life;
+though the agent will not necessarily harm humans, it would do so if it helped to create paperclips. So, it
+isn't unreasonable to imagine it creating paperclips at the the cost of human civilisation, given enough power
+and intelligence.
 
 A proposed fix is [Asimov's Three Laws of Robotics](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics),
 which state that:
