@@ -54,7 +54,9 @@ Just as these system agents learn to win in specific systems, the supervisor use
 some function of the environment (the *utility function*). It learns to predict the state of the world in the
 same way as a system agent, and maximises the utility of the predicted environment state multiplied by its
 probability of reaching this state. The supervisor must then save its goal, and will choose the move which is
-closest to its goal. Here, we see the architecture of the supervisor:
+closest to its goal.  
+
+Here, we see the architecture of the supervisor:
 
 ![Supervisor architecture](../images/math/agi/agi-3.svg)
 
