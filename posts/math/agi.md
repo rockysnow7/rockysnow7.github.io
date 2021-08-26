@@ -23,11 +23,10 @@ turn-based games, not just chess and draughts).
 > "The intelligence of a system is a measure of its skill-acquisition efficiency over a scope of tasks with
 respect to priors, experience, and generalization difficulty." - F. Chollet, *On the Measure of Intelligence*
 
-By this definition (which we will be using throughout this post), an intelligent agent must be able to learn
-to manipulate various unrelated systems to achieve some goal, and to transfer its abilities from one system
-to another, with as little training data as possible. To manage its knowledge of these systems, the agent
-must have a controlling part, known hereafter as the *supervisor*. The parts controlled by the supervisor will
-be called *system agents*.  
+By this definition, an intelligent agent must be able to learn to manipulate various unrelated systems to
+achieve some goal, and to transfer its abilities from one system to another, with as little training data as
+possible. To manage its knowledge of these systems, the agent must have a controlling part, known hereafter as
+the *supervisor*. The parts controlled by the supervisor will be called *system agents*.  
 
 From this, we can approximate an architecture:
 
@@ -63,20 +62,19 @@ Here, we see the architecture of the supervisor:
 ### The Utility Function
 
 The vagueness of the agent's description is both positive and daunting: the agent can do whatever you want, but
-you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the supervisor's
-compression ratio through exploration, which Juergen Schmidhuber claims would lead to the agent having
-subjective experiences. Schmidhuber explains the method of exploration in the paper linked, and I highly
-recommend you read it.  
+you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the first
+derivative of the supervisor's compression ratio through exploration. Schmidhuber explains the method of
+exploration in the paper linked, and I highly recommend you read it.  
 
 Aside from being difficult, choosing a utility function [is also dangerous](https://intelligence.org/2016/12
 /28/ai-alignment-why-its-hard-and-where-to-start/). A famous example of this is the Paperclip Maximiser, a
-thought experiment in which a superintelligent AI is told to maximise the number of paperclips in the world.
-Initially, this sounds harmless (if a little useless) - you may imagine that the agent would raise money to
-create factories dedicated to the production of paperclips, perhaps acting similarly to an entrepreneur. But
-the utility function (i.e. the number of paperclips) does not take into account the importance of human life;
-though the agent will not necessarily harm humans, it would do so if it helped to create paperclips. So, it
-isn't unreasonable to imagine it creating paperclips at the the cost of human civilisation, given enough power
-and intelligence.
+thought experiment in which an AGI is told to maximise the number of paperclips in the world. Initially, this
+sounds harmless (if a little useless) - you may imagine that the agent would raise money to create factories
+dedicated to the production of paperclips, perhaps acting similarly to an entrepreneur. But the utility
+function (i.e. the number of paperclips) does not take into account the importance of human life; though the
+agent will not necessarily harm humans, it would do so if it helped to create paperclips. So, it isn't
+unreasonable to imagine it creating paperclips at the the cost of human civilisation, given enough power and
+intelligence.  
 
 A proposed fix is [Asimov's Three Laws of Robotics](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics),
 which state that:
