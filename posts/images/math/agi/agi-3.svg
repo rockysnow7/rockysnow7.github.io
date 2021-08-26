@@ -50,7 +50,6 @@
 <title>Environment&#45;&gt;Predictor</title>
 <path fill="none" stroke="black" d="M234.61,-320.21C242.66,-307.98 253.71,-291.21 262.83,-277.36"/>
 <polygon fill="black" stroke="black" points="265.92,-279.03 268.5,-268.76 260.08,-275.18 265.92,-279.03"/>
-<text text-anchor="middle" x="337.54" y="-290.8" font-family="Times,serif" font-size="14.00"> &#160;once, at start of game</text>
 </g>
 <!-- Clusterer -->
 <g id="node3" class="node">
