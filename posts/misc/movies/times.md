@@ -18,7 +18,7 @@
 
 **fri**
 - *17:30* - the dead don't die
-- ?
+- *19:30* - ?
 
 **sat**
 - *17:00* - split
