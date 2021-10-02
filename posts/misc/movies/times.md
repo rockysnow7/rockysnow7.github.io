@@ -32,8 +32,11 @@
 **wed**
 
 **thu**
+- *20:00* - tremors
 
 **fri**
+- *16:45* - the purge
+- *18:40* - the purge: anarchy
 
 **sat**
 - *14:00* - spree
