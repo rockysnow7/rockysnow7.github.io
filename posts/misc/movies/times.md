@@ -16,12 +16,16 @@
 
 ---
 
-**sat**
+**fri**
 - *17:30* - the dead don't die
+- ?
 
-**sun**
+**sat**
 - *17:00* - split
 - *21:30* - zombieland 1
+
+**sun**
+- ?
 
 **mon**
 - *16:00* - ma
