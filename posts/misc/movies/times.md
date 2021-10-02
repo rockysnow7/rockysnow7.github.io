@@ -21,11 +21,12 @@
 - *19:30* - ?
 
 **sat**
-- *17:00* - split
-- *21:30* - zombieland 1
+- *17:30* - split
+- *20:00* - zombieland 1
 
 **sun**
-- ?
+- *17:00* - halloween 1
+- *19:00* - halloween 2
 
 **mon**
 - *16:00* - ma
@@ -51,4 +52,5 @@
 - *16:00* - blair witch
 
 **sun**
-- ?
+- *17:30* - zombieland 2
+- *19:30* - ghostbusters

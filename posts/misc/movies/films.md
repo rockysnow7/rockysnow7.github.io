@@ -6,7 +6,7 @@
 
 ### zombies
 - ~~zombieland 1 (1h 27m, comedy, horror)~~
-- zombieland 2 (1h 39m, comedy, horror)
+- ~~zombieland 2 (1h 39m, comedy, horror)~~
 - shaun of the dead (1h 39m, comedy, horror)
 - cockneys vs zombies	(1h 28m, comedy, horror)
 - ~~the dead don't die (1h 44m, comedy, horror)~~
@@ -16,8 +16,8 @@
 - ghostbusters (1h 45m, comedy, horror)
 
 ### slashers
-- halloween 1 (1h 31m, horror)
-- halloween 2 (1h 32m, horror)
+- ~~halloween 1 (1h 31m, horror)~~
+- ~~halloween 2 (1h 32m, horror)~~
 - ~~fear street 1 (1h 47m, horror, teen)~~
 - ~~fear street 2 (1h 50m, horror, teen)~~
 - ~~fear street 3 (1h 54m, horror, teen)~~
