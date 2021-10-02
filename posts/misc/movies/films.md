@@ -35,7 +35,7 @@
 - ~~ma (1h 39m, horror, bloody)~~
 
 ### fantasy
-- jumanji (1h 44m, comedy)
+- ~~jumanji (1h 44m, comedy)~~
 - labyrinth (1h 41m, comedy)
 - the iron giant (1h 26m, comedy, all the feels)
 
