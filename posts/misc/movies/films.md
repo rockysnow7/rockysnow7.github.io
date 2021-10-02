@@ -13,7 +13,7 @@
 
 ### miscellaneous monsters
 - ~~tremors (1h 36m, comedy, horror)~~
-- ghostbusters (1h 45m, comedy, horror)
+- ~~ghostbusters (1h 45m, comedy, horror)~~
 
 ### slashers
 - ~~halloween 1 (1h 31m, horror)~~
@@ -36,7 +36,7 @@
 
 ### fantasy
 - ~~jumanji (1h 44m, comedy)~~
-- labyrinth (1h 41m, comedy)
+- ~~labyrinth (1h 41m, comedy)~~
 - the iron giant (1h 26m, comedy, all the feels)
 
 ---
