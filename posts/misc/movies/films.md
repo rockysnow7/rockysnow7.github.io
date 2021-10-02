@@ -20,7 +20,7 @@
 - halloween 2 (1h 32m, horror)
 - ~~fear street 1 (1h 47m, horror, teen)~~
 - ~~fear street 2 (1h 50m, horror, teen)~~
-- fear street 3 (1h 54m, horror, teen)
+- ~~fear street 3 (1h 54m, horror, teen)~~
 
 ### dystopian
 - ~~the purge (1h 25m, horror)~~

@@ -28,8 +28,12 @@
 - *18:30* - midsommar
 
 **tue**
+- *17:30* - fear street 1
+- *19:40* - fear street 2
 
 **wed**
+- *17:30* - fear street 3
+- *20:00* - jumanji
 
 **thu**
 - *20:00* - tremors
@@ -43,3 +47,4 @@
 - *16:00* - blair witch
 
 **sun**
+- ?
