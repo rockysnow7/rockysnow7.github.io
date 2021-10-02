@@ -25,19 +25,21 @@
 ### dystopian
 - the purge (1h 25m, horror)
 - the purge: anarchy (1h 43m, horror)
-- spree (1h 32m, comedy, horror)
+- ~~spree (1h 32m, comedy, horror)~~
 
 ### phych thrillers
-- midsommar (2h 27m, folk horror)
-- the blair witch project (1h 20m, folk horror, monster)
+- ~~midsommar (2h 27m, folk horror)~~
+- ~~the blair witch project (1h 20m, folk horror, monster)~~
 - the descent (1h 35m, horror, monster)
-- split (1h 57m, horror)
-- ma (1h 39m, horror, bloody)
+- ~~split (1h 57m, horror)~~
+- ~~ma (1h 39m, horror, bloody)~~
 
 ### fantasy
 - jumanji (1h 44m, comedy)
 - labyrinth (1h 41m, comedy)
 - the iron giant (1h 26m, comedy, all the feels)
+
+---
 
 ### not on netflix
 - the thing (1h 49m, horror)
