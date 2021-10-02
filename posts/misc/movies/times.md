@@ -1,14 +1,16 @@
 # schedule
 
-sat		*16:30*  
-sun		*-?*  
-mon		*-*  
-tue		*16:30*  
-wed		*16:30*  
-thu		*19:00*  
-fri		*15:30*  
-sat		*-*  
-sun		*16:30*
+[See the movies list](films.md)
+
+sat - *16:30*  
+sun - *-?*  
+mon - *-*  
+tue - *16:30*  
+wed - *16:30*  
+thu - *19:00*  
+fri - *15:30*  
+sat - *-*  
+sun - *16:30*
 
 **sat**
 - *17:30* - the dead don't die
