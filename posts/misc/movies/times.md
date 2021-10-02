@@ -2,6 +2,8 @@
 
 [See the movies list](films.md)
 
+---
+
 **sat** - *16:30*  
 **sun** - *-?*  
 **mon** - *-*  

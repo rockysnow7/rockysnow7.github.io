@@ -2,6 +2,8 @@
 
 [See the schedule](times.md)
 
+---
+
 ### zombies
 - ~~zombieland 1 (1h 27m, comedy, horror)~~
 - zombieland 2 (1h 39m, comedy, horror)
