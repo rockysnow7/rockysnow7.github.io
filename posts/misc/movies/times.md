@@ -50,6 +50,7 @@
 **sat**
 - *14:00* - spree
 - *16:00* - blair witch
+- *18:00* - the haunting of bly manor
 
 **sun**
 - *17:30* - zombieland 2
