@@ -18,11 +18,10 @@
 
 **fri**
 - *17:30* - the dead don't die
-- *19:30* - labyrinth
+- *19:30* - zombieland 1
 
 **sat**
-- *17:30* - split
-- *20:00* - zombieland 1
+- *19:00* - split
 
 **sun**
 - *17:00* - halloween 1
@@ -48,10 +47,10 @@
 - *18:40* - the purge: anarchy
 
 **sat**
-- *14:00* - spree
-- *16:00* - blair witch
-- *18:00* - the haunting of bly manor
+- *20:00* - spree
 
 **sun**
-- *17:30* - zombieland 2
-- *19:30* - ghostbusters
+- *12:00* - ghostbusters
+- *14:30* - blair witch
+- *16:30* - zombieland 2
+- *18:30* - the haunting of bly manor
