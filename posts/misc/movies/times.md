@@ -24,8 +24,8 @@
 - *19:00* - split
 
 **sun**
-- *17:00* - halloween 1
-- *19:00* - halloween 2
+- *18:30* - halloween 1
+- *20:30* - halloween 2
 
 **mon**
 - *16:00* - ma
