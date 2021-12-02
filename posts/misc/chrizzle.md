@@ -6,7 +6,6 @@
 - [the stranger](https://wordery.com/the-stranger-albert-camus-9789390492589?cTrk=MTkwODY1ODc0fDYxYTkyYzA1ZWQ2ZDQ6MToyOjYxYTkyYmY3ZTBjMmQ0Ljk3MDQ2ODMwOmRlOTQ2M2Jk) (*£9*)
 
 
-because we love a pretentious book
-<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+because we love a pretentious book<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
 <input type="checkbox" id="sn-1" class="sidenote-toggle" />
-<span class="sidenote">where *pretentious* is defined as apparently profound and pre-1960. and yes, i added a sidenote bcs i just got this css theme working and it's funnnnnnn</span>!
+<span class="sidenote">where *pretentious* is defined as apparently profound and pre-1960. and yes, i added a footnote bcs i just got this css theme working and it's funnnnnnn</span>!
