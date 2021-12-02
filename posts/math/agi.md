@@ -59,6 +59,27 @@ Here, we see the architecture of the supervisor:
 
 ![Supervisor architecture](../images/math/agi/agi-3.svg)
 
+### Specifics
+
+```
+self.in_game = false
+loop
+	data, legal_moves = get input from environment
+
+	if not self.in_game
+		goals = {-1, 0, 1}
+
+		evals = {}
+		for move in legal_moves
+			for goal in goals
+				evals[(move, goal)] = 
+
+	else
+		n = self.cluster_of(self.autoencoder.encode(data))
+		moves_evaluations = self.sys_agents[n].evaluate(data, legal_moves)
+		move = move with evaluation closest to goal
+```
+
 ### The Utility Function
 
 The vagueness of the agent's description is both positive and daunting: the agent can do whatever you want, but
