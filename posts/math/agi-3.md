@@ -1,5 +1,7 @@
 ## An Idea for a Generally Intelligent Agent
 
+---
+
 ### intro
 
 At each time step, the agent receives an observation of the environment.
