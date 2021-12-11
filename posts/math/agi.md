@@ -17,4 +17,4 @@
 
 Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
 
-1. Let \\( \mathbf{AE}_0(o) \\) be the encoded form of \\( o \\) by the world AE.
+1. Let \\( \text{AE}_0(o) \\) be the encoded form of \\( o \\) by the world AE.
