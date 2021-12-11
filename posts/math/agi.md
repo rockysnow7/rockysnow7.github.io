@@ -1,107 +1,17 @@
-## An Idea for a Generally-Intelligent Reinforcement Learning Agent
+## An Idea for a Generally Intelligent Agent
 
-### Introduction
+---
 
-Stockfish is [one of](https://en.wikipedia.org/wiki/Top_Chess_Engine_Championship#Tournament_results_
-%28TCEC%29) the best chess engines of all time. Magnus Carlsen is often said to be the best chess player of
-all time. If Carlsen were to play Stockfish at chess, Stockfish would win [by a landslide](https://www.quora
-.com/Can-Magnus-Carlsen-draw-Stockfish). If they were to play draughts, not only would Carlsen win, but
-Stockfish would not be able to understand the problem: chess has fundamental features not shared by draughts.
-So to create an agent capable of playing both games, we would need to find shared features; this process
-would be repeated with new games, finding more fundamental shared features. Over time, fewer features
-constrain it, and eventually, with enough games considered, the agent will be able to be trained to play any
-game considered in its development (and more!).  
+### intro
 
-So, what are the shared features of chess and draughts? At any time, the agent gets a view of the state of
-the system and a set of legal moves, the playing of any of which changes the state of the system in some
-way. This happens to the other agent, and is repeated until the state of the system follows some particular
-pattern, at which point either one of the players has won or the result is a draw (this covers most
-turn-based games, not just chess and draughts).  
+At each time step, the agent receives an observation of the environment.
+It must then choose an action to maximise its utility function.
 
-### The Agent
+### structure
 
-> "The intelligence of a system is a measure of its skill-acquisition efficiency over a scope of tasks with
-respect to priors, experience, and generalization difficulty." - F. Chollet, *On the Measure of Intelligence*
-
-By this definition, an intelligent agent must be able to learn to manipulate various unrelated systems to
-achieve some goal, and to transfer its abilities from one system to another, with as little training data as
-possible. To manage its knowledge of these systems, the agent must have a controlling part, known hereafter as
-the *supervisor*. The parts controlled by the supervisor will be called *system agents*.  
-
-From this, we can approximate an architecture:
-
-![Basic architecture](../images/math/agi/agi-1.svg)
-
-In order for the system agents to learn, they must be given data from the environment. They will then pass on
-their evaluation of each legal move to the supervisor, which will act on it. This evaluation is performed by
-the system agent predicting the evolution of the game, first with a given move, then with a neural net trained
-to predict the state after the supervisor has acted, before passing it through a neural net trained on pairs of
-states and the sum of the outcome of the game divided by the number of states in the game and the original
-evaluation of the state (this will be explained more later; it's hard to describe math in English).
-
-So, the architecture of a single system agent is:
-
-![System agent architecture](../images/math/agi/agi-2.svg)
-
-Specifically, a system will be defined as a cluster of points in the latent space of an autoencoder trained on
-states previously observed by the supervisor. So if the encoded form of an input is placed in cluster *n*, the
-input will be passed to system agent *n* for analysis. If a new cluster is made, the system agent for the
-nearest cluster is duplicated and assigned the new cluster. In this way, the agent's understanding of the world
-in which it lives is constantly being updated and its actions optimised.  
-
-Just as these system agents learn to win in specific systems, the supervisor uses the system agents to maximise
-some function of the environment (the *utility function*). It learns to predict the state of the world in the
-same way as a system agent, and maximises the utility of the predicted environment state multiplied by its
-probability of reaching this state. The supervisor must then save its goal, and will choose the move which is
-closest to its goal.  
-
-Here, we see the architecture of the supervisor:
-
-![Supervisor architecture](../images/math/agi/agi-3.svg)
-
-### Specifics
-
-```
-self.in_game = false
-loop
-	data, legal_moves = get input from environment
-
-	if not self.in_game
-		goals = {-1, 0, 1}
-
-		evals = {}
-		for move in legal_moves
-			for goal in goals
-				evals[(move, goal)] = 
-
-	else
-		n = self.cluster_of(self.autoencoder.encode(data))
-		moves_evaluations = self.sys_agents[n].evaluate(data, legal_moves)
-		move = move with evaluation closest to goal
-```
-
-### The Utility Function
-
-The vagueness of the agent's description is both positive and daunting: the agent can do whatever you want, but
-you have to tell it what you want. [One idea](https://arxiv.org/abs/0812.4360) is to maximise the first
-derivative of the supervisor's compression ratio through exploration. Schmidhuber explains the method of
-exploration in the paper linked, and I highly recommend you read it.  
-
-Aside from being difficult, choosing a utility function [is also dangerous](https://intelligence.org/2016/12
-/28/ai-alignment-why-its-hard-and-where-to-start/). A famous example of this is the Paperclip Maximiser, a
-thought experiment in which an AGI is told to maximise the number of paperclips in the world. Initially, this
-sounds harmless (if a little useless) - you may imagine that the agent would raise money to create factories
-dedicated to the production of paperclips, perhaps acting similarly to an entrepreneur. But the utility
-function (i.e. the number of paperclips) does not take into account the importance of human life; though the
-agent will not necessarily harm humans, it would do so if it helped to create paperclips. So, it isn't
-unreasonable to imagine it creating paperclips at the the cost of human civilisation, given enough power and
-intelligence.  
-
-A proposed fix is [Asimov's Three Laws of Robotics](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics),
-which state that:
-1. A robot must not harm humans (through action or inaction).
-2. A robot must obey humans (unless doing so would break Law 1).
-3. A robot must protect itself (unless doing so would breaks Laws 1 or 2).  
-
-While these laws are okay for agents with small goals, they become problematic for agents with more serious
-goals
+- *CU*: the control unit, which contains the agent's utility function, and its history of observations.
+- *World AE*: an autoencoder which encodes a given observation into a latent space. Trained on the set of past observations.
+- *Topic AEs*: a set of autoencoders which encode a subset of the latent space of the world AE. Each one is stored with the centre coordinates of the corresponding cluster.
+- *Subtopic AEs*: a set of autoencoders which encode a subset of the latent space of the topic AEs. Each one is stored along with the centre coordinates of the corresponding cluster.
+- *Sub-subtopic AEs*: ....
+- *Predictor*: predicts the state of the world at the next time step, encoded by the most recent AE. This is passed back up the chain of AEs to the CU.
