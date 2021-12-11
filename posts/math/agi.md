@@ -1,13 +1,6 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 ## An Idea for a Generally Intelligent Agent
 
 ---
-
-### intro
-
-At each time step, the agent receives an observation of the environment.
-It must then choose an action to maximise its utility function.
 
 ### structure
 
@@ -20,6 +13,6 @@ It must then choose an action to maximise its utility function.
 
 ### acting
 
-Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
+Given an observation \\[ o \\], the agent chooses an action \\[ a \\] by:
 
-1. Let \\( \mathbf{AE}_0(o) \\) be the encoded form of \\( o \\) by the world AE.
+1. Let \\[ \mathbf{AE}_0(o) \\] be the encoded form of \\[ o \\] by the world AE.
