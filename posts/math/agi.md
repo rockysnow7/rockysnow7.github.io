@@ -18,6 +18,6 @@ It must then choose an action to maximise its utility function.
 
 ### acting
 
-Given an observation \\(o\\), the agent chooses an action \\(a\\) by:
+Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
 
-1. Let \\(\mathbf{AE}_0(o)\\) be the encoded form of \\(o\\) by the world AE.
+1. Let \\( \mathbf{AE}_0(o) \\) be the encoded form of \\( o \\) by the world AE.
