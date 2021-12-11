@@ -1,3 +1,5 @@
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 ## An Idea for a Generally Intelligent Agent
 
 ---
@@ -13,6 +15,6 @@
 
 ### acting
 
-Given an observation \\[ o \\], the agent chooses an action \\[ a \\] by:
+Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
 
-1. Let \\[ \mathbf{AE}_0(o) \\] be the encoded form of \\[ o \\] by the world AE.
+1. Let \\( \mathbf{AE}_0(o) \\) be the encoded form of \\( o \\) by the world AE.
