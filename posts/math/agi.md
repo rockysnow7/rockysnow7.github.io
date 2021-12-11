@@ -15,6 +15,7 @@
 
 ### acting
 
-Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
+Let \\( \text{AE}_{i,j,k,...} : \mathbb R^n \rightarrow R^m \\) be the autoencoder of the \\( i \\)th topic, \\( j \\)th subtopic, \\( k \\)th sub-subtopic, etc.
+Let \\( \text{AE}_0 \\) be the world AE.
 
-1. Let \\( \text{AE}_0(o) \\) be the encoded form of \\( o \\) by the world AE.
+Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
