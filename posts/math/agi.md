@@ -21,7 +21,8 @@ most recent AE. This is passed back up the chain of AEs to the CU.
 
 ### acting
 
-Let \\( \text{AE}_{i,j,k,...} : \mathbb R^{I_{i,j,k,...}} \rightarrow \mathbb R^{O_{i,j,k,...}} \\) be the autoencoder associated with the cluster centre \\( i \\),
+Let \\( \text{AE}\_{i,j,k,...} : \mathbb R^{I_{i,j,k,...}} \rightarrow \mathbb
+R^{O_{i,j,k,...}} \\) be the autoencoder associated with the cluster centre \\( i \\),
 sub-cluster centre \\( j \\), sub-sub-cluster centre \\( k \\), etc., where \\( i \in
 \mathbb R^n \\).  
 Let \\( \text{AE}_0 \\) be the world AE.
