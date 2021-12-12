@@ -23,11 +23,12 @@ most recent AE. This is passed back up the chain of AEs to the CU.
 
 Let \\( \text{AE}\_{i,j,k,...} : \mathbb R^{I_{i,j,k,...}} \rightarrow \mathbb
 R^{O_{i,j,k,...}} \\) be the autoencoder associated with the cluster centre \\( i \\),
-sub-cluster centre \\( j \\), sub-sub-cluster centre \\( k \\), etc., where \\( i \in
-\mathbb R^a, j \in \mathbb R^b, k \in \mathbb R^c, ... \\) (i.e. \\( i,j,k \\) are
-coordinates).  
+sub-cluster centre \\( j \\), sub-sub-cluster centre \\( k \\), etc., where
+\\( i \in \mathbb R^{I_i}, j \in \mathbb R^{I_{i,j}}, k \in \mathbb
+R^{I_{i,j,k}},... \\).
 Let \\( \text{AE}_0 \\) be the world AE.
 
 Given an observation \\( o \\), the agent chooses an action \\( a \\) by:
 
-1. Let \\( z_1 = \text{AE}_0(o) \\).
+1. Let \\( z_0 = \text{AE}_0(o) \\).
+2. 
