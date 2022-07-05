@@ -14,5 +14,17 @@ Contents:
     - Alpha-beta pruning
     - ...
 - Description of how results were measured
-    - Formula for scoring engines (\\( S = \frac{w}{\bar w} \frac{\bar t}{t} \\)).
+    - Formula for scoring engines (Weissman score,
+\\( S = \frac{R}{\bar R} \frac{\bar T}{T} \\)).
+    - Details of algorithm
+    - Time spent training, measuring
 - Results
+    - Move time with each algorithm
+    - Rating with each algorithm
+    - Score with each algorithm
+    - And all of the below without any pruning algorithms
+- Conclusions
+    - Best pruning algorithm for win rate
+    - Best pruning algorithm for move time
+    - Best pruning algorithm for general score
+    - Finally, are pruning algorthms worth using?
