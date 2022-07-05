@@ -8,7 +8,11 @@ Contents:
 
 - Intro
     - Description of the game of chess (3 paragraphs)
-    - Description of the basic engine (without pruning, 3 paragraphs)
+    - Description of the basic engine without pruning (3 paragraphs)
     - Definition of a pruning algorithm (1 paragraph)
 - Description of how each pruning algorithm works
-    - Alpha-Beta Pruning
+    - Alpha-beta pruning
+    - ...
+- Description of how results were measured
+    - Formula for scoring engines (\\( S = \frac{w}{\bar w} \frac{\bar t}{t} \\)).
+- Results
