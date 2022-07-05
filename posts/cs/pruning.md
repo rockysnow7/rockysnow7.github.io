@@ -15,7 +15,7 @@ Contents:
     - ...
 - Description of how results were measured
     - Formula for scoring engines (Weissman score,
-\\( S = \ddfrac{R}{\bar R} \ddfrac{\bar T}{T} \\)).
+\\( S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\)).
     - Details of algorithm
     - Time spent training, measuring
 - Results
