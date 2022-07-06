@@ -28,3 +28,4 @@ Contents:
     - Best pruning algorithm for move time
     - Best pruning algorithm for general score
     - Finally, are pruning algorthms worth using?
+- Bibliography
