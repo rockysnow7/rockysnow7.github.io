@@ -18,6 +18,9 @@ Contents:
 \\( S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\)).
     - Details of algorithm
     - Time spent training, measuring
+- Programming Diary
+    - Problems
+    - How I overcame them
 - Results
     - Move time with each algorithm
     - Rating with each algorithm
