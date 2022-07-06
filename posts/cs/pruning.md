@@ -19,8 +19,11 @@ Contents:
     - Details of algorithm
     - Time spent training, measuring
 - Programming Diary
+    - Design
     - Problems
     - How I overcame them
+    - How the design changed over time
+    - Code snippets
 - Results
     - Move time with each algorithm
     - Rating with each algorithm
