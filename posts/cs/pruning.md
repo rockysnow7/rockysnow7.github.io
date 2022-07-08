@@ -18,6 +18,12 @@ Contents:
 \\( S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\)).
     - Details of algorithm
     - Time spent training, measuring
+- Programming Diary
+    - Design
+    - Problems
+    - How I overcame them
+    - How the design changed over time
+    - Code snippets
 - Results
     - Move time with each algorithm
     - Rating with each algorithm
@@ -28,3 +34,4 @@ Contents:
     - Best pruning algorithm for move time
     - Best pruning algorithm for general score
     - Finally, are pruning algorthms worth using?
+- Bibliography/further reading
