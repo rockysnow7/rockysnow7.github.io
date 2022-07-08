@@ -10,7 +10,7 @@
 - Let \\( f : \mathbb W \rightarrow \mathbb R \\) be some function to be maximised.
 - Let \\( \text{AE} : \mathbb W \rightarrow \mathbb R^n \\) be an autoencoder,
   which returns a set of coordinates in an \\( n \\)-dimensional lantent space
-  \\( \mathcal L \\).
+  \\( \mathcal L \\).  
 
 ### Acting
 
