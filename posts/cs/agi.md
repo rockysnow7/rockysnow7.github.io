@@ -7,4 +7,4 @@
 ### definitions
 
 - Let \\( \mathbb W \\) be the set of states of the world.
-- Let \\( f : \mathbb W \rarr \mathbb R \\) be some function to be maximised.
+- Let \\( f : \mathbb W \rightarrow \mathbb R \\) be some function to be maximised.
