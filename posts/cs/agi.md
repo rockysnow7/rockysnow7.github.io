@@ -15,4 +15,4 @@
 ### Acting
 
 1. Get sensor input \\( w\_i \in \mathbb W \\) from the world.
-2. Let \\( w\_e = \text{AE}(w) \\).
+2. Let \\( w\_e = \text{AE}(w\_i) \\).
