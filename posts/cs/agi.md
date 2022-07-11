@@ -11,8 +11,6 @@
 - Let \\( \text{AE} : \mathbb W \rightarrow \mathbb R^n \\) be an autoencoder,
 which returns a set of coordinates in an \\( n \\)-dimensional lantent space \\( L \\).
 
----
-
 ### Acting
 
 1. Get sensor input \\( w\_i \in \mathbb W \\) from the world.
