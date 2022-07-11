@@ -13,7 +13,7 @@ which returns a set of coordinates in an \\( n \\)-dimensional lantent space \\(
 
 ---
 
-### Acting
+### Acting
 
 1. Get sensor input \\( w\_i \in \mathbb W \\) from the world.
 2. Let \\( w\_e = \text{AE}(w\_i) \\).
