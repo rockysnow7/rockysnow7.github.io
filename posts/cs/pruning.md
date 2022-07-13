@@ -38,4 +38,5 @@ Contents:
 - How I improved
     - What I was bad at when I started
     - Examples of how I have improved in these areas
+    - Why this is important/how it will be useful in future projects
 - Bibliography/further reading
