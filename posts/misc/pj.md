@@ -4,7 +4,7 @@
 
 ---
 
-why do i keep putting "yo" after sentences? we may never know<label for="sn-anything" class="sidenote-toggle">🐝</label><input type="checkbox" id="sn-anything" class="sidenote-toggle" /><span class="sidenote">yo</span>.
+why do i keep putting "yo" after sentences? we may never know <label for="sn-anything" class="sidenote-toggle">🐝</label><input type="checkbox" id="sn-anything" class="sidenote-toggle" /><span class="sidenote">yo</span>.
 
 - https://youtu.be/Edh\_8LMpReY
 - https://youtu.be/dQw4w9WgXcQ
