@@ -13,5 +13,17 @@ which returns a set of coordinates in an \\( n \\)-dimensional lantent space \\(
 
 ### Acting
 
-1. Get sensor input \\( w\_i \in \mathbb W \\) from the world.
+1. Get input \\( w\_i \in \mathbb W \\) from the world.
 2. Let \\( w\_e = \text{AE}(w\_i) \\).
+
+
+```
+def act():
+    w_i = world state
+    w_e = AE(e)
+    p = cluster centre closest to w_e
+    p_dist = distance between w_e and p
+
+    if p_dist > self.topic_split_threshold:
+        
+```
