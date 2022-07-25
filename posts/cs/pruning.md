@@ -6,6 +6,7 @@
 
 Contents:
 
+- Video of play
 - Intro
     - Description of the game of chess (3 paragraphs)
     - Description of the basic engine without pruning (3 paragraphs)
@@ -28,10 +29,14 @@ Contents:
     - Move time with each algorithm
     - Rating with each algorithm
     - Score with each algorithm
-    - And all of the below without any pruning algorithms
+    - And all of the above without any pruning algorithms
 - Conclusions
     - Best pruning algorithm for win rate
     - Best pruning algorithm for move time
     - Best pruning algorithm for general score
     - Finally, are pruning algorthms worth using?
+- How I improved
+    - What I was bad at when I started
+    - Examples of how I have improved in these areas
+    - Why this is important/how it will be useful in future projects
 - Bibliography/further reading
