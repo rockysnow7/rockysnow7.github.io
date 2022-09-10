@@ -1,41 +1,12 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@600;800&display=swap');
-
-body {
-    background-color: #f9f3f0;
-}
-
-h1 {
-    text-align: center;
-    color: #2c0703;
-    font-family: "Noto Serif Georgian", serif;
-    font-weight: 800;
-}
-
-h3 {
-    font-family: "Noto Serif Georgian", serif;
-    font-weight: 600;
-}
-
-h3::before {
-    content: "~\20";
-}
-
-h3::after {
-    content: "\20~";
-}
+@import url("https://latex.now.sh/style.min.css");
 
 a {
     text-decoration: none;
-    color: #672836;
 }
 
-.title::before {
-    content: "\ab\20";
-}
-
-.title::after {
-    content: "\20\bb";
+h1.project_name {
+    color: blue; // test
 }
