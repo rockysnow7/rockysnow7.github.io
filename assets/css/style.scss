@@ -7,10 +7,10 @@ a {
     text-decoration: none;
 }
 
-.title-text::before {
+.title::before {
     content: "\ab\20";
 }
 
-.title-text::after {
+.title::after {
     content: "\20\bb";
 }
