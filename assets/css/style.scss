@@ -1,6 +1,8 @@
 ---
 ---
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@600;900&display=swap');
+
 body {
     background-color: #f9f3f0;
 }
@@ -8,6 +10,13 @@ body {
 h1 {
     text-align: center;
     color: #2c0703;
+    font-family: "Noto Serif Georgian", serif;
+    font-weight: 900;
+}
+
+h3 {
+    font-family: "Noto Serif Georgian", serif;
+    font-weight: 600;
 }
 
 h3::before {
