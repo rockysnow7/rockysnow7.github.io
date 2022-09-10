@@ -10,6 +10,14 @@ h1 {
     color: #2c0703;
 }
 
+h3::before {
+    content: "–\20";
+}
+
+h3::after {
+    content: "\20–";
+}
+
 a {
     text-decoration: none;
     color: #672836;
