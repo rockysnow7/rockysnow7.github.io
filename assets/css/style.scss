@@ -8,7 +8,7 @@ a {
 }
 
 #title::before::after {
-    content: "";
+    content: "" !important;
 }
 
 h1::before {
