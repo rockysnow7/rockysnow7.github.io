@@ -1,10 +1,13 @@
 ---
 ---
 
-//@import url("https://latex.now.sh/style.min.css");
+body {
+    background-color: #ebd4cb;
+}
 
-a {
-    text-decoration: none;
+h1 {
+    text-align: center;
+    color: #2c0703;
 }
 
 .title::before {
@@ -13,4 +16,9 @@ a {
 
 .title::after {
     content: "\20\bb";
+}
+
+a {
+    text-decoration: none;
+    color: #672836;
 }
