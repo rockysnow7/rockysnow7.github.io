@@ -7,6 +7,10 @@ a {
     text-decoration: none;
 }
 
-h1.project_name {
-    color: blue; // test
+h1::before {
+    content: " \00ab ";
+}
+
+h1::after {
+    content: " \00bb ";
 }
