@@ -11,11 +11,11 @@ h1 {
 }
 
 h3::before {
-    content: "–\20";
+    content: "~\20";
 }
 
 h3::after {
-    content: "\20–";
+    content: "\20~";
 }
 
 a {
