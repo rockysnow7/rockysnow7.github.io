@@ -10,15 +10,15 @@ h1 {
     color: #2c0703;
 }
 
-.title::before {
-    content: "\ab\20";
-}
-
-.title::after {
-    content: "\20\bb";
-}
-
 a {
     text-decoration: none;
     color: #672836;
+}
+
+.no-arrows::before {
+    content: "\ab\20";
+}
+
+.no-arrows::after {
+    content: "\20\bb";
 }

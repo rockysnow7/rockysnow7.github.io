@@ -1,4 +1,4 @@
-<h1 class="title">movies</h1>
+# movies
 
 [See the schedule](times.md)
 
