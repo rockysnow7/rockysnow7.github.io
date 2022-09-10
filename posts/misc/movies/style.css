@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@500&display=swap');
 
-div.title {
+div#title {
     background-color: #890620;
     text-align: center;
     text-transform: uppercase;
