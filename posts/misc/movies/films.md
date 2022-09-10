@@ -1,4 +1,4 @@
-# movies
+<h1 class="title">movies</h1>
 
 [See the schedule](times.md)
 
@@ -6,7 +6,7 @@
 
 ### zombies
 - shaun of the dead (1h 39m, comedy, horror)
-- cockneys vs zombies	(1h 28m, comedy, horror)
+- cockneys vs zombies (1h 28m, comedy, horror)
 
 ### phych thrillers
 - the descent (1h 35m, horror, monster)
