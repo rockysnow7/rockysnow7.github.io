@@ -7,7 +7,7 @@ a {
     text-decoration: none;
 }
 
-.project-name {
+#title::before::after {
     content: none;
 }
 
