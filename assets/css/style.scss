@@ -1,20 +1,16 @@
 ---
 ---
 
-@import url("https://latex.now.sh/style.min.css");
+//@import url("https://latex.now.sh/style.min.css");
 
 a {
     text-decoration: none;
 }
 
-#title::before::after {
-    content: "" !important;
-}
-
-h1::before {
+.title-text::before {
     content: "\ab\20";
 }
 
-h1::after {
+.title-text::after {
     content: "\20\bb";
 }
