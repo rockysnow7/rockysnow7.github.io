@@ -1,12 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@500&display=swap');
-
-div#title {
-    background-color: #890620;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Noto Serif Georgian", serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@500&family=Prata&display=swap');
 
 body {
     background-color: #f9f3f0;
+    color: #0a090c;
+    position: relative;
+}
+
+div#title {
+    background-color: #dd4b50;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1.title {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #f9f3f0;
+}
+
+h1.title:before {
+    content: "« ";
+}
+
+h1.title:after {
+    content: " »";
+}
+
+h2 {
+    text-align: center;
+    text-transform: lowercase;
+    font-family: "Prata", sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+h2:before, h2:after {
+    content: " ~ ";
+}
+
+hr {
+    width: 50px;
+    height: 1px;
+    border: none;
+    background-color: #686464;
+}
+
+p {
+    text-align: center;
+    font-family: "Libre Baskerville", serif;
+    font-size: 14px;
+}
+
+p span.description {
+    color: #686464;
+    font-size: 12px;
+    margin-left: 20px;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p.gray {
+    color: #686464;
+}
+
+p.gray:before {
+    content: "empty"
+}
+
+p.crossed {
+    color: #686464;
+    text-decoration: line-through;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:before, a:after {
+    content: " ~ ";
+}
+
+a:link {
+    color: #634696;
+}
+
+a:visited {
+    color: #372851;
+}
+
+div#footer {
+    padding-top: 60px;
+}
+
+hr#footer {
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    width: 100%;
+}
+
+p#footer {
+    position: absolute;
+    bottom: -10px;
+    right: 17px;
+}
+
+p#footer:after {
+    content: "→";
 }
