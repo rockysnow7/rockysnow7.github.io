@@ -35,4 +35,5 @@ chess, in some instances[^1] better than humans.
 
 ### Bibliography and Further Reading
 
-[^1]: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista)
+[^1]: El Ajedrecista was an automaton capable of playing three-piece endgames:
+  [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista)
