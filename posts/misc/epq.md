@@ -19,7 +19,8 @@ make, and their ultimate goal is to trap their opponent's king, winning the
 game.
 
 In the early 20th century, people began creating machines that could play
-chess, in some instances[^1] better than humans.
+chess, in some instances[^1] better than humans. These have improved in design
+over time, and now software chess engines are far better than humans.
 
 ### The Pruning Algorithms
 
@@ -27,7 +28,7 @@ chess, in some instances[^1] better than humans.
 
 ### Programming Diary
 
-### Results
+### Results
 
 ### Conclusions
 
@@ -35,4 +36,4 @@ chess, in some instances[^1] better than humans.
 
 ### Bibliography and Further Reading
 
-[^1]: El Ajedrecista was an automaton capable of playing three-piece endgames: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
+[^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
