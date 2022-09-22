@@ -16,11 +16,21 @@ in any direction. However, knowledge of the specific rules of the game are not
 necessary for understanding this project, and so I will not go through them all
 here: just know that on each turn there are many possible moves the player can
 make, and their ultimate goal is to trap their opponent's king, winning the
-game.
+game. If there reaches a point in the game where it will be impossible for
+either player to win, then the game ends as a draw.
 
 In the early 20th century, people began creating machines that could play
 chess, in some instances[^1] better than humans. These have improved in design
-over time, and now software chess engines are far better than humans.
+over time, and now chess engines (computers that play and analyse chess games)
+are consistently far better than humans. One issue faced by all modern chess
+engines is the amount of time it takes the engine to decide which move to make.
+Various attempts have been made to speed this process up, and in this project
+we will compare the effects of two of the most popular methods.
+
+The next section provides an outline of how a basic chess engine works and what
+can be done to speed them up.
+
+### The Structure of a Chess Engine
 
 ### The Pruning Algorithms
 
