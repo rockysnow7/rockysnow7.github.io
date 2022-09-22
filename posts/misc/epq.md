@@ -32,6 +32,18 @@ can be done to speed them up.
 
 ### The Structure of a Chess Engine
 
+There are two main components of a chess engine, namely the *evaluation
+function* and the *minimax algorithm*[^2] (both explained below). An engine is
+just a program that runs the minimax algorithm with the evaluation function and
+plays the resulting move.
+
+An evaluation function is just a mathematical formula that takes in a chess
+position and outputs a number representing which player is winning. \\( 0 \\)
+indicates an equal position, while a positive number means white is winning,
+and a negative number means black is winning. So, for example, if a position is
+evaluated as \\( +1.2 \\) then the engine believes white is winning (by a good
+amount).
+
 ### The Pruning Algorithms
 
 ### Measuring Their Effects
@@ -47,3 +59,4 @@ can be done to speed them up.
 ### Bibliography and Further Reading
 
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
+[^2]: An *algorithm* is just a set of instructions which, when completed, gives some result. For example, a cake recipe could be considered an algorithm for making cake.
