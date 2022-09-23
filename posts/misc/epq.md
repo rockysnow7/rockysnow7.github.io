@@ -10,9 +10,9 @@
 
 Chess is a turn-based strategy board game for two players, taking place on a
 grid. On a player's turn, they move one piece according to the rules of how that
-piece can move - for example, the turret-shaped *rook* can move in straight
-horizontal or vertical lines of any length, while the *king* can move one square
-in any direction. However, knowledge of the specific rules of the game are not
+piece can move - for example, the *rook* can move in straight horizontal or
+vertical lines of any length, while the *king* can move one square in any
+direction. However, knowledge of the specific rules of the game are not
 necessary for understanding this project, and so I will not go through them all
 here: just know that on each turn there are many possible moves the player can
 make, and their ultimate goal is to trap their opponent's king, winning the
@@ -70,8 +70,8 @@ speed the engine up. The evaluation function is really just a lot of
 multiplication and addition, both of which are already extremely fast on
 computers. So, we will look at speeding up the minimax search. This requires
 limiting the number of positions the engine evaluates, a process known as
-*pruning*[^2]. The specific pruning algorithms[^3] we will use are discussed in
-the next section.
+*pruning*[^2]. The specific pruning methods we will use are discussed in the
+next section.
 
 ### The Pruning Algorithms
 
