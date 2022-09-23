@@ -10,7 +10,7 @@
 
 Chess is a turn-based strategy board game for two players, taking place on a
 grid. On a player's turn, they move one piece according to the rules of how that
-piece can move - for example, the *rook* can move in straight horizontal or
+piece can move – for example, the *rook* can move in straight horizontal or
 vertical lines of any length, while the *king* can move one square in any
 direction. However, knowledge of the specific rules of the game are not
 necessary for understanding this project, and so I will not go through them all
@@ -56,28 +56,39 @@ evaluation function and chooses the move that will lead to the best position
 long-term, assuming both it and its opponent play the best moves it can find
 for them. This also contributes to the amount of time taken to find the best
 move: the number of positions that must be evaluated in order to choose a move
-increases exponentially as we increase the search depth - that is, the number
+increases exponentially as we increase the search depth – that is, the number
 of moves ahead the engine plans. There are, on average, about 30 moves
 that can be made in any position. So, looking 4 moves ahead, this means
 the engine has to evaluate about 810,000 positions to find the best
-move. It takes time to run the evaluation function, and so in evaluating
-810,000 positions this time adds up.
+move. It takes time to run the evaluation function, and in evaluating 810,000
+positions this time adds up.
 
 <!-- SEARCH TREE DIAGRAM -->
 
 Given that there are two parts to an engine, there are two ways we can try to
 speed the engine up. The evaluation function is really just a lot of
-multiplication and addition, both of which are already extremely fast on
-computers. So, we will look at speeding up the minimax search. This requires
+multiplication and addition, both of which are extremely fast on computers
+already. So, we will look at speeding up the minimax search. This requires
 limiting the number of positions the engine evaluates, a process known as
 *pruning*[^2]. The specific pruning methods we will use are discussed in the
 next section.
 
 ### The Pruning Algorithms
 
-The most popular pruning algorithm is *alpha-beta pruning*. This 
-
 ### Measuring Their Effects
+
+Two things may change in the engine as a result of a pruning algorithm being
+applied: the move time and the win rate. Imagine, for example, a pruning
+algorithm that halves the amount of time taken to come up with a move, but
+always causes the engine to choose bad moves – we need a way of showing that
+this is, overall, a bad thing to do. Specifically, we need a way of scoring the
+pruning algorithms in order to find the best of those we looked at.
+
+In the field of data compression there is a method for comparing compression
+algorithms known as the *Weissman score*. I will use an adapted form of
+Weissman:
+
+\\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
 
 ### Programming Diary
 
