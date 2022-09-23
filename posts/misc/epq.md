@@ -39,9 +39,9 @@ plays the resulting move.
 
 An evaluation function is just a mathematical formula that takes in a chess
 position and outputs a number representing which player it thinks is winning.
-\\( 0 \\) indicates an equal position, while a positive number means white is
+0 indicates an equal position, while a positive number means white is
 winning, and a negative number means black is winning. So, for example, if a
-position is evaluated as \\( +1.2 \\) then the engine believes white is winning
+position is evaluated as +1.2 then the engine believes white is winning
 (by a good amount). This function gets better at guessing who is winning over
 time by playing many thousands of games and observing their results. This need
 for the engine to train is where the issue of speed comes up, but we will
@@ -57,11 +57,11 @@ long-term, assuming both it and its opponent play the best moves it can find
 for them. This also contributes to the amount of time taken to find the best
 move: the number of positions that must be evaluated in order to choose a move
 increases exponentially as we increase the search depth - that is, the number
-of moves ahead the engine plans. There are, on average, about \\( 30 \\) moves
-that can be made in any position. So, looking \\( 4 \\) moves ahead, this means
-the engine has to evaluate about \\( 810,000 \\) positions to find the best
-move. It takes time to run the evaluation function, and so in evaluating \\(
-810,000 \\) positions this time adds up.
+of moves ahead the engine plans. There are, on average, about 30 moves
+that can be made in any position. So, looking 4 moves ahead, this means
+the engine has to evaluate about 810,000 positions to find the best
+move. It takes time to run the evaluation function, and so in evaluating
+810,000 positions this time adds up.
 
 <!-- SEARCH TREE DIAGRAM -->
 
