@@ -85,7 +85,7 @@ the next section.
 
 ### What I Learned
 
-### Bibliography and Further Reading
+### Footnotes and Further Reading
 
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
