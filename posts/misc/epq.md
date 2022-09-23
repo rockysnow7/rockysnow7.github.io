@@ -75,6 +75,8 @@ the next section.
 
 ### The Pruning Algorithms
 
+The most popular pruning algorithm is *alpha-beta pruning*. This 
+
 ### Measuring Their Effects
 
 ### Programming Diary
