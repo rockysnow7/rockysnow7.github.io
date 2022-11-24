@@ -1,4 +1,4 @@
-## c'est la masse du jesu christi, garçonnnnnn
+## ona li tenpo suno sewi pi jan kolisu, mije liliiiiii
 
 - [the teachings of karl marx (v. i. lenin)](https://www.lulu.com/shop/vi-lenin/the-teachings-of-karl-marx/paperback/product-ve6zny.html?page=1&pageSize=4) ($4.74)
 - [materialism and the dialectical method (m. cornforth)](https://www.lulu.com/shop/maurice-cornforth/materialism-and-the-dialectical-method/paperback/product-kqe589.html?page=1&pageSize=4) ($6.87)
