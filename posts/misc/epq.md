@@ -63,7 +63,7 @@ the engine has to evaluate about 810,000 positions to find the best
 move. It takes time to run the evaluation function, and in evaluating 810,000
 positions this time adds up.
 
-<!-- SEARCH TREE DIAGRAM -->
+![Search tree](epq-assets/tree.png)
 
 Given that there are two parts to an engine, there are two ways we can try to
 speed the engine up. The evaluation function is really just a lot of
@@ -110,7 +110,12 @@ Weissman to score pruning algorithms:
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
 
 Here, \\( S \\) is a number representing the overall score of an engine. \\( R
-\\)
+\\) is the Elo rating of an engine using a pruning algorithm, and \\(
+\displaystle \bar R \\) is the Elo rating of the unpruned engine. Similarly,
+\\( T \\) is the mean move time of an engine using a pruning algorithm, and \\(
+\displaystyle \bar T \\) is the mean move time of the unpruned engine. In this
+way, these values can be used to calculate and ultimately rank the
+effectiveness of pruning algorithms.
 
 ### Programming Diary
 
