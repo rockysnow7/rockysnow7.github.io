@@ -70,25 +70,46 @@ speed the engine up. The evaluation function is really just a lot of
 multiplication and addition, both of which are extremely fast on computers
 already. So, we will look at speeding up the minimax search. This requires
 limiting the number of positions the engine evaluates, a process known as
-*pruning*[^2]. The specific pruning methods we will use are discussed in the
-next section.
+*pruning*[^2]. The specific pruning algorithms[^3] we will use are discussed in
+the next section.
 
 ### The Pruning Algorithms
 
 ### Measuring Their Effects
 
 Two things may change in the engine as a result of a pruning algorithm being
-applied: the move time and the win rate. Imagine, for example, a pruning
-algorithm that halves the amount of time taken to come up with a move, but
-always causes the engine to choose bad moves – we need a way of showing that
-this is, overall, a bad thing to do. Specifically, we need a way of scoring the
-pruning algorithms in order to find the best of those we looked at.
+applied: the move time and the rating[^4]. Move time is easy to measure – it can
+simply be measured in units of time, such as milliseconds.
+
+Rating, however, is slightly more complicated: the standard method of rating
+chess players is known as the *Elo rating system*. This is an algorithm which
+can be used to rank chess players by assigning each player a number (generally
+between 0 and 4000), where a higher number represents a better player. For
+reference, the current chess world champion has an Elo rating of 2870, while a
+beginner generally has a rating of around 1000. With every game played, the
+ratings of both players is updated based upon who won and who was expected to
+win. For example, if a 2000-rated player wins against a 500-rated player, this
+win was expected (as the winner is rated so much higher than the loser), and so
+the winner gains few-to-no points and the loser loses few-to-no points. If
+instead the weaker player had won, this is highly unexpected, and so they would
+gain a significant number of points while the higher-rated player would lose a
+significant number. After playing many games, the ratings of both players will
+become relatively accurate and stable, with only minor changes occurring every
+now and then.
+
+Imagine, for example, a pruning algorithm that halves the amount of time taken
+to come up with a move, but always causes the engine to choose bad moves – we
+need a way of showing that this is, overall, a bad thing to do. Specifically,
+we need a way of scoring the pruning algorithms in order to find the best of
+those we looked at.
 
 In the field of data compression there is a method for comparing compression
 algorithms known as the *Weissman score*. I will use an adapted form of
-Weissman:
+Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
+
+Here, \\( S \\) is a number representing the overall 
 
 ### Programming Diary
 
@@ -103,3 +124,4 @@ Weissman:
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
 [^3]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
+[^4]: A chess player's (or engine's) rating is a number representing how good they are – a beginner tends to have a rating of around 1300 points, whereas the current world chess champion has a rating of around 3000 points.
