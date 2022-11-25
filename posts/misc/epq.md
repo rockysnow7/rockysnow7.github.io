@@ -78,13 +78,13 @@ the next section.
 ### Measuring Their Effects
 
 Two things may change in the engine as a result of a pruning algorithm being
-applied: the move time and the rating[^4]. Move time is easy to measure – it can
+applied: the move time and the rating. Move time is easy to measure – it can
 simply be measured in units of time, such as milliseconds.
 
 Rating, however, is slightly more complicated: the standard method of rating
 chess players is known as the *Elo rating system*. This is an algorithm which
 can be used to rank chess players by assigning each player a number (generally
-between 0 and 4000), where a higher number represents a better player. For
+between 0 and 3000), where a higher number represents a better player. For
 reference, the current chess world champion has an Elo rating of 2870, while a
 beginner generally has a rating of around 1000. With every game played, the
 ratings of both players is updated based upon who won and who was expected to
@@ -104,12 +104,12 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we looked at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*. I will use an adapted form of
+algorithms known as the *Weissman score*[^4][^5]. I will use an adapted form of
 Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
 
-Here, \\( S \\) is a number representing the overall 
+Here, \\( S \\) is a number representing the overall score of an engine. 
 
 ### Programming Diary
 
@@ -124,4 +124,5 @@ Here, \\( S \\) is a number representing the overall
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
 [^3]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
-[^4]: A chess player's (or engine's) rating is a number representing how good they are – a beginner tends to have a rating of around 1300 points, whereas the current world chess champion has a rating of around 3000 points.
+[^4]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
+[^5]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
