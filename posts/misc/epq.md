@@ -104,7 +104,7 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we looked at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*[^4][^5]. I will use an adapted form of
+algorithms known as the *Weissman score*[^4,^5]. I will use an adapted form of
 Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
