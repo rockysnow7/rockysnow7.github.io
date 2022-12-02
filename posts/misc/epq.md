@@ -76,8 +76,8 @@ next section.
 ### The Pruning Algorithms
 
 The most popular pruning algorithm[^3] for chess engines is *alpha-beta*
-pruning. Another popular algorithm is *ProbCut*, a variant of alpha-beta which
-is theoretically superior.
+pruning. Another popular algorithm is *ProbCut*, which is similar to alpha-beta
+but theoretically superior.
 
 An engine using alpha-beta pruning starts the search normally, playing
 hypothetical moves and evaluating the resulting positions. During this process,
@@ -93,6 +93,8 @@ guaranteed to be worse than an already-searched move, then it is not considered.
 By ignoring a branch, the number of positions that need to be evaluated is
 reduced, and so the total time needed to perform the minimax search is reduced
 as a result.
+
+An engine using ProbCut also begins the search normally, but 
 
 ### Measuring Their Effects
 
@@ -123,8 +125,8 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we looked at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*[^4]<sup>,</sup>[^5]. I will use an adapted form of
-Weissman to score pruning algorithms:
+algorithms known as the *Weissman score*[^4]<sup>,</sup>[^5]. I will use an
+adapted form of Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
 
@@ -137,13 +139,11 @@ rating increases above the unpruned rating or the pruned mean move time decrease
 below the unpruned mean move time. In this way, these values can be used to
 calculate and ultimately rank the effectiveness of pruning algorithms.
 
-### Programming Diary
+### Programming
 
 ### Results
 
 ### Conclusions
-
-### What I Learned
 
 ### Footnotes and Further Reading
 
