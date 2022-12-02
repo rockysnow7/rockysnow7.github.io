@@ -58,7 +58,7 @@ for them. This also contributes to the amount of time taken to find the best
 move: the number of positions that must be evaluated in order to choose a move
 increases exponentially as we increase the search depth – that is, the number
 of moves ahead the engine plans. There are, on average, about 30 moves
-that can be made in any position. So, looking 4 moves ahead, this means
+that can be made in any position. So, looking 4 moves ahead, this means 
 the engine has to evaluate about 810,000 positions to find the best
 move. It takes time to run the evaluation function, and in evaluating 810,000
 positions this time adds up.
@@ -79,7 +79,18 @@ The most popular pruning algorithm[^3] for chess engines is *alpha-beta*
 pruning. Another popular algorithm is *ProbCut*, a variant of alpha-beta which
 is theoretically superior.
 
-An engine using 
+An engine using alpha-beta pruning starts the search normally, playing
+hypothetical moves and evaluating the resulting positions. During this process,
+however, it will find that some moves will guarantee positions of a
+higher evaluation than others. For example, consider a situation in which the
+engine is considering two moves, \\( A \\) and \\( B \\): move \\( A \\) will
+lead to good positions for the engine, whereas move \\( B \\) will lead to a
+position in which the opponent is able to eventually win the game. As long as
+just one branch of the tree from move \\( B \\) leads to the opponent winning,
+it is assumed that the opponent will find this and therefore move \\( B \\) does
+not need to be considered. By ignoring a branch, the number of positions that
+need to be evaluated is reduced, and so the total time needed to perform the
+minimax search is reduced as a result.
 
 ### Measuring Their Effects
 
