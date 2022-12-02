@@ -88,9 +88,11 @@ lead to good positions for the engine, whereas move \\( B \\) will lead to a
 position in which the opponent is able to eventually win the game. As long as
 just one branch of the tree from move \\( B \\) leads to the opponent winning,
 it is assumed that the opponent will find this and therefore move \\( B \\) does
-not need to be considered. By ignoring a branch, the number of positions that
-need to be evaluated is reduced, and so the total time needed to perform the
-minimax search is reduced as a result.
+not need to be considered. This concept is constantly applied: if a move is
+guaranteed to be worse than an already-searched move, then it is not considered.
+By ignoring a branch, the number of positions that need to be evaluated is
+reduced, and so the total time needed to perform the minimax search is reduced
+as a result.
 
 ### Measuring Their Effects
 
