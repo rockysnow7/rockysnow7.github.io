@@ -70,10 +70,16 @@ speed the engine up. The evaluation function is really just a lot of
 multiplication and addition, both of which are extremely fast on computers
 already. So, we will look at speeding up the minimax search. This requires
 limiting the number of positions the engine evaluates, a process known as
-*pruning*[^2]. The specific pruning algorithms[^3] we will use are discussed in
-the next section.
+*pruning*[^2]. The specific pruning methods we will use are discussed in the
+next section.
 
 ### The Pruning Algorithms
+
+The most popular pruning algorithm[^3] for chess engines is *alpha-beta*
+pruning. Another popular algorithm is *ProbCut*, a variant of alpha-beta which
+is theoretically superior.
+
+An engine using 
 
 ### Measuring Their Effects
 
@@ -104,18 +110,19 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we looked at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*[^4]<sup>,</sup>[^5]. I will use an adapted form of
+algorithms known as the *Weissman score*[^4]^,[^5]. I will use an adapted form of
 Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
 
 Here, \\( S \\) is a number representing the overall score of an engine. \\( R
-\\) is the Elo rating of an engine using a pruning algorithm, and \\(
-\displaystle \bar R \\) is the Elo rating of the unpruned engine. Similarly,
-\\( T \\) is the mean move time of an engine using a pruning algorithm, and \\(
-\displaystyle \bar T \\) is the mean move time of the unpruned engine. In this
-way, these values can be used to calculate and ultimately rank the
-effectiveness of pruning algorithms.
+\\) is the Elo rating of an engine using a pruning algorithm, and \\( \bar R \\)
+is the Elo rating of the unpruned engine. Similarly, \\( T \\) is the mean move
+time of an engine using a pruning algorithm, and \\( \bar T \\) is the mean move
+time of the unpruned engine. The overall score increases if either the pruned
+rating increases above the unpruned rating or the pruned mean move time decreases
+below the unpruned mean move time. In this way, these values can be used to
+calculate and ultimately rank the effectiveness of pruning algorithms.
 
 ### Programming Diary
 
