@@ -76,8 +76,8 @@ next section.
 ### The Pruning Algorithms
 
 The most popular pruning algorithm[^3] for chess engines is *alpha-beta*
-pruning. Another popular algorithm is *ProbCut*, which is similar to alpha-beta
-but theoretically superior.
+pruning. Another popular algorithm is *ProbCut*, which is based upon alpha-beta
+but is theoretically faster.
 
 An engine using alpha-beta pruning starts the search normally, playing
 hypothetical moves and evaluating the resulting positions. During this process,
@@ -94,7 +94,10 @@ By ignoring a branch, the number of positions that need to be evaluated is
 reduced, and so the total time needed to perform the minimax search is reduced
 as a result.
 
-An engine using ProbCut also begins the search normally, but 
+ProbCut follows a similar process, but attempts to speed it up. It is based
+upon the hypothesis that the result of a search with a low depth works as a
+rough estimate of a search with a high depth[^6] (for example, searching 2
+moves ahead will give a similar result to searching 5 moves ahead).
 
 ### Measuring Their Effects
 
@@ -147,8 +150,9 @@ calculate and ultimately rank the effectiveness of pruning algorithms.
 
 ### Footnotes and Further Reading
 
-[^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: [https://en.wikipedia.org/wiki/El_Ajedrecista](https://en.wikipedia.org/wiki/El_Ajedrecista).
+[^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: <https://en.wikipedia.org/wiki/El_Ajedrecista>.
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
 [^3]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
 [^4]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
 [^5]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
+[^6]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
