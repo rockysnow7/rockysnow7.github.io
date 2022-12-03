@@ -179,10 +179,10 @@ winning in a given position.
 
 The minimax search and pruning algorithms are much simpler, as there are many
 resources available on how to implement them efficiently. As mentioned in
-Section 3, ProbCut uses values found through statistical analysis of previous
-games. This statistical analysis is complex and beyond the scope and subject of
-this project, and so I used values found in the original 1995 paper[^8], which
-introduced ProbCut.
+Section 3, part of the statistical techniques used by ProbCut rely on data
+found through statistical analysis of previous games. This statistical analysis
+is complex and beyond the scope and subject of this project, and so I used
+values found in the original 1995 paper[^8], which introduced ProbCut.
 
 The process of gathering the final data needed (the mean move time and Elo
 rating for each engine) involved creating an unpruned engine and two copies
@@ -198,13 +198,33 @@ described by Elo, mentioned in Section 4.
 
 After measuring the mean move time and Elo rating of each engine, I calculated
 the overall scores by the formula described in Section 4. The following table
-shows this data:
+shows this data.
+
+<br>
 
 | Pruning Algorithm Used | Mean Move Time (ms) | Elo Rating | Overall Score |
 | ---------------------- | ------------------- | ---------- | ------------- |
 | None (control)         | 460                 | 1220       | 1             |
 | Alpha-Beta             | 54                  | 1986       | 13.87         |
 | ProbCut                | 55                  | 1750       | 11.99         |
+
+<br>
+
+There are two things notable about these results. Firstly, they show that
+alpha-beta is not only more effective than no pruning, but that it is more
+effective than ProbCut; the reason for this is explained in the next paragraph.
+Secondly, it can be seen that the difference in mean move time of 1 millisecond
+between alpha-beta and ProbCut results in a difference of 236 Elo rating
+points. This can be attributed to the extra games the alpha-beta pruned engine
+was able to play in the given 6 hours due to the faster move time. In contrast,
+the ProbCut pruned engine was not able to play as many games, and so it did not
+train as much, and this ultimately resulted in its lower Elo rating.
+
+The reason for the slower move time with ProbCut is related to its
+implementation: the statistical techniques used in ProbCut involve calculating
+the square root of a value, a relatively slow process for computers[^9]. The
+time taken to calculate this square root outweighs any improvement ProbCut
+makes over alpha-beta, resulting in a slower mean move time.
 
 ### 7. Footnotes, Further Reading, and References
 
@@ -216,3 +236,4 @@ shows this data:
 [^6]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
 [^7]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
 [^8]: Buro, M., 1995. 'ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm', ICCA Journal, vol. 18, no. 2, pp. 3-5.
+[^9]: Newton's method - Citizendium. 2022. Newton's method - Citizendium. [ONLINE] Available at: https://en.citizendium.org/wiki/Newton%27s_method#Computational_complexity.
