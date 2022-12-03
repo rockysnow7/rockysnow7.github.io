@@ -64,6 +64,7 @@ move. It takes time to run the evaluation function, and in evaluating 810,000
 positions this time adds up.
 
 ![Search tree](epq-assets/tree.png)
+<img src="epq-assets/tree.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
 
 Given that there are two parts to an engine, there are two ways we can try to
 speed the engine up. The evaluation function is really just a lot of
@@ -109,7 +110,7 @@ applied: the move time and the rating. Move time is easy to measure – it can
 simply be measured in units of time, such as milliseconds.
 
 Rating, however, is slightly more complicated: the standard method of rating
-chess players is known as the *Elo rating system*. This is an algorithm which
+chess players is known as the *Elo* rating system[^5]. This is an algorithm which
 can be used to rank chess players by assigning each player a number (generally
 between 0 and 3000), where a higher number represents a better player. For
 reference, the current chess world champion has an Elo rating of 2870, while a
@@ -131,7 +132,7 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we looked at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*[^5]<sup>,</sup>[^6]. I will use an
+algorithms known as the *Weissman score*[^6]<sup>,</sup>[^7]. I will use an
 adapted form of Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
@@ -147,7 +148,7 @@ whole, the only thing being changed between engines is the pruning algorithm
 used, and so in practice it is a way of ranking the effectiveness of the pruning
 algorithms themselves.
 
-### 5. Programming
+### 5. Implementation
 
 In order to calculate the scores described in the previous section, we must
 first create three engines: one without pruning, one with alpha-beta pruning,
@@ -181,17 +182,20 @@ The minimax search and pruning algorithms are much simpler, as there are many
 resources available on how to implement them efficiently. As mentioned in
 Section 3, ProbCut uses values found through statistical analysis of previous
 games. This statistical analysis is complex and beyond the scope and subject of
-this project, and so I used values found in the original 1995 paper[^7] which
+this project, and so I used values found in the original 1995 paper[^8] which
 introduced ProbCut.
- 
+
 ### 6. Results and Conclusions
 
-### 7. Footnotes and Further Reading
+After measuring the Elo rating and 
+
+### 7. Footnotes, Further Reading, and References
 
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: <https://en.wikipedia.org/wiki/El_Ajedrecista>.
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
 [^3]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
 [^4]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
-[^5]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
-[^6]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
-[^7]: Buro, M., 1995. "ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm", ICCA Journal, vol. 18, no. 2, pp. 3-5.
+[^5]: Elo, A., 1961. 'The USCF Rating System - A Scientific Achievement', Chess Life, vol. XVI, no. 6, pp. 160-161.
+[^6]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
+[^7]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
+[^8]: Buro, M., 1995. "ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm", ICCA Journal, vol. 18, no. 2, pp. 3-5.
