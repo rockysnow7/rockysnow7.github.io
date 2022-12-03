@@ -94,10 +94,13 @@ By ignoring a branch, the number of positions that need to be evaluated is
 reduced, and so the total time needed to perform the minimax search is reduced
 as a result.
 
-ProbCut follows a similar process, but attempts to speed it up. It is based
-upon the hypothesis that the result of a search with a low depth works as a
-rough estimate of a search with a high depth[^6] (for example, searching 2
-moves ahead will give a similar result to searching 5 moves ahead).
+ProbCut is based upon the idea that the result of a search with a low depth works
+as a rough estimate of a search with a high depth[^4] (for example, that
+searching 2 moves ahead will give a similar result to searching 5 moves ahead).
+It follows a similar process to alpha-beta, but uses statistical techniques to
+predict, based on past games, whether a branch should be ignored. This can
+allow the engine to prune branches sooner than with alpha-beta, and so could be
+an improvement.
 
 ### Measuring Their Effects
 
@@ -128,7 +131,7 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we looked at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*[^4]<sup>,</sup>[^5]. I will use an
+algorithms known as the *Weissman score*[^5]<sup>,</sup>[^6]. I will use an
 adapted form of Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
@@ -153,6 +156,6 @@ calculate and ultimately rank the effectiveness of pruning algorithms.
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: <https://en.wikipedia.org/wiki/El_Ajedrecista>.
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
 [^3]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
-[^4]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
-[^5]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
-[^6]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
+[^4]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
+[^5]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
+[^6]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
