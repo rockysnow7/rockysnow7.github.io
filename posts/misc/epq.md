@@ -142,8 +142,10 @@ is the Elo rating of the unpruned engine. Similarly, \\( T \\) is the mean move
 time of an engine using a pruning algorithm, and \\( \bar T \\) is the mean move
 time of the unpruned engine. The overall score increases if either the pruned
 rating increases above the unpruned rating or the pruned mean move time decreases
-below the unpruned mean move time. In this way, these values can be used to
-calculate and ultimately rank the effectiveness of pruning algorithms.
+below the unpruned mean move time. Though this is a score of the engine as a
+whole, the only thing being changed between engines is the pruning algorithm
+used, and so in practice it is a way of ranking the effectiveness of the pruning
+algorithms themselves.
 
 ### 5. Programming
 
@@ -160,16 +162,31 @@ called *weights* and the numbers added are called *biases*. It can be trained to
 give certain kinds of outputs given certain kinds of inputs by comparing its
 actual output with what the "correct" output would have been, and then changing
 its weights and biases to get closer to the correct output. If repeated many
-times with a wide range of training input data, the neural network can reliably
-give outputs following some intended pattern. In our case, the input will be a
-position on a chessboard, and the output will be a number representing who is
-currently winning the game (the evaluation).
+times with a wide range of training input and output data, the neural network
+can reliably give outputs following some intended pattern. In our case, the
+input will be a position on a chessboard, and the output will be a number
+representing who is currently winning the game and by how much (the
+evaluation).
 
-### 6. Results
+In all engines, the neural network will be trained in the same way: the engine
+plays a game against itself, storing every position seen during the game, and
+finally stores the outcome of the game (white wins as \\( 1 \\), a draw as \\(
+0 \\), black wins as \\( -1 \\)). It then trains the neural network (by the
+process described above) with each position from the game as the input training
+data, and the outcome of the game as the output training data. Repeated with
+many training games, this results in the neural network being able to roughly
+predict which side is winning in a given position.
 
-### 7. Conclusions
+The minimax search and pruning algorithms are much simpler, as there are many
+resources available on how to implement them efficiently. As mentioned in
+Section 3, ProbCut uses values found through statistical analysis of previous
+games. This statistical analysis is complex and beyond the scope and subject of
+this project, and so I used values found in the original 1995 paper[^7] which
+introduced ProbCut.
+ 
+### 6. Results and Conclusions
 
-### Footnotes and Further Reading
+### 7. Footnotes and Further Reading
 
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: <https://en.wikipedia.org/wiki/El_Ajedrecista>.
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
@@ -177,3 +194,4 @@ currently winning the game (the evaluation).
 [^4]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
 [^5]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
 [^6]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
+[^7]: Buro, M. (1995) "ProbCut: An Effective Selective Extension of the alphabeta Algorithm.", ICCA Journal, Vol 18, No. 2, [pdf](https://wiki.cs.pdx.edu/cs542-spring2013/papers/buro/probcut.pdf)
