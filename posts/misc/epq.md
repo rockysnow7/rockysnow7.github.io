@@ -170,23 +170,41 @@ evaluation).
 
 In all engines, the neural network will be trained in the same way: the engine
 plays a game against itself, storing every position seen during the game, and
-finally stores the outcome of the game (white wins as \\( 1 \\), a draw as \\(
-0 \\), black wins as \\( -1 \\)). It then trains the neural network (by the
-process described above) with each position from the game as the input training
-data, and the outcome of the game as the output training data. Repeated with
-many training games, this results in the neural network being able to roughly
-predict which side is winning in a given position.
+finally stores the outcome of the game (white wins as 1, a draw as 0, black
+wins as -1). It then trains the neural network (by the process described above)
+with each position from the game as the input training data, and the outcome of
+the game as the output training data. Repeated with many training games, this
+results in the neural network being able to roughly predict which side is
+winning in a given position.
 
 The minimax search and pruning algorithms are much simpler, as there are many
 resources available on how to implement them efficiently. As mentioned in
 Section 3, ProbCut uses values found through statistical analysis of previous
 games. This statistical analysis is complex and beyond the scope and subject of
-this project, and so I used values found in the original 1995 paper[^8] which
+this project, and so I used values found in the original 1995 paper[^8], which
 introduced ProbCut.
+
+The process of gathering the final data needed (the mean move time and Elo
+rating for each engine) involved creating an unpruned engine and two copies
+(one with alpha-beta and one with ProbCut), and leaving all three to train (by
+the process described above) for 6 hours. I then found the mean move time of
+each by playing each engine against itself for 100 games and measuring the time
+for each move to be found, and finally taking the mean. Similarly, the Elo
+scores of each engine were found by playing the different engines against each
+other for 100 games and updating their ratings according to the algorithm
+described by Elo, mentioned in Section 4.
 
 ### 6. Results and Conclusions
 
-After measuring the Elo rating and 
+After measuring the mean move time and Elo rating of each engine, I calculated
+the overall scores by the formula described in Section 4. The following table
+shows this data:
+
+| Pruning Algorithm Used | Mean Move Time (ms) | Elo Rating | Overall Score |
+| ---------------------- | ------------------- | ---------- | ------------- |
+| None (control)         | 460                 | 1220       | 1             |
+| Alpha-Beta             | 54                  | 1986       | 13.87         |
+| ProbCut                | 55                  | 1750       | 11.99         |
 
 ### 7. Footnotes, Further Reading, and References
 
@@ -197,4 +215,4 @@ After measuring the Elo rating and
 [^5]: Elo, A., 1961. 'The USCF Rating System - A Scientific Achievement', Chess Life, vol. XVI, no. 6, pp. 160-161.
 [^6]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
 [^7]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
-[^8]: Buro, M., 1995. "ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm", ICCA Journal, vol. 18, no. 2, pp. 3-5.
+[^8]: Buro, M., 1995. 'ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm', ICCA Journal, vol. 18, no. 2, pp. 3-5.
