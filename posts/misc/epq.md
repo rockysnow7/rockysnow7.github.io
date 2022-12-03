@@ -63,8 +63,7 @@ the engine has to evaluate about 810,000 positions to find the best
 move. It takes time to run the evaluation function, and in evaluating 810,000
 positions this time adds up.
 
-![Search tree](epq-assets/tree.png)
-<img src="epq-assets/tree.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+<img src="epq-assets/tree.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 
 Given that there are two parts to an engine, there are two ways we can try to
 speed the engine up. The evaluation function is really just a lot of
