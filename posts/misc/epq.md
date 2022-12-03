@@ -228,15 +228,15 @@ makes over alpha-beta, resulting in a slower mean move time.
 
 A game between me (as white) and the 1220-rated unpruned engine.
 
-<img src="game-unpruned.gif">
+![]("epq-assets/game-unpruned.gif")
 
 A game between me (as white) and the 1986-rated alpha-beta engine.
 
-<img src="game-ab.gif">
+![]("epq-assets/game-ab.gif")
 
 A game between me (as white) and the 1750-rated ProbCut engine.
 
-<img src="game-probcut.gif">
+![]("epq-assets/game-probcut.gif")
 
 ### 8. Footnotes, Further Reading, and References
 
