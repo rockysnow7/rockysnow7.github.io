@@ -252,4 +252,4 @@ The 1750-rated ProbCut engine:
 [^6]: The Weissman score: <https://en.wikipedia.org/wiki/Weissman_score>.
 [^7]: IEEE Spectrum. 2022. A Fictional Compression Metric Moves Into the Real World - IEEE Spectrum. [ONLINE] Available at: <https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world>.
 [^8]: Buro, M., 1995. 'ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm', ICCA Journal, vol. 18, no. 2, pp. 3-5.
-[^9]: Newton's method - Citizendium. 2022. Newton's method - Citizendium. [ONLINE] Available at: https://en.citizendium.org/wiki/Newton%27s_method#Computational_complexity.
+[^9]: Newton's method - Citizendium. 2022. Newton's method - Citizendium. [ONLINE] Available at: <https://en.citizendium.org/wiki/Newton%27s_method#Computational_complexity>.
