@@ -35,41 +35,40 @@ function* and the *minimax search* (both explained below). An engine is
 just a program that runs the minimax search with the evaluation function and
 plays the resulting move.
 
-An evaluation function is just a mathematical formula that takes in a chess
+An evaluation function is a mathematical formula that takes in a chess
 position and outputs a number representing which player it thinks is winning.
 0 indicates an equal position, while a positive number means white is
 winning, and a negative number means black is winning. So, for example, if a
 position is evaluated as +1.2 then the engine believes white is winning
 (by a good amount). This function gets better at guessing who is winning over
 time by playing many thousands of games and observing their results. This need
-for the engine to train is where the issue of speed comes up, but we will
-explore this further in a later section.
+for the engine to train is where the issue of speed comes up.
 
-The minimax search is the process by which the engine decides the best move
-given a position. It does this by playing each possible move in the current
-position, and then each possible move in each resulting position, and then each
-possible move in the positions resulting from those, and so on, looking a
-certain number of moves ahead. It then evaluates each position with the
-evaluation function and chooses the move that will lead to the best position
-long-term, assuming both it and its opponent play the best moves it can find
-for them. This also contributes to the amount of time taken to find the best
-move: the number of positions that must be evaluated in order to choose a move
-increases exponentially as we increase the search depth – that is, the number
-of moves ahead the engine plans. There are, on average, about 30 moves
-that can be made in any position. So, looking 4 moves ahead, this means 
-the engine has to evaluate about 810,000 positions to find the best
-move. It takes time to run the evaluation function, and in evaluating 810,000
-positions this time adds up.
+The minimax search is the process by which the engine decides which move is
+the best, given a position. It does this by playing each possible move in the
+current position, and then each possible move in each resulting position, and
+then each possible move in the positions resulting from those, and so on,
+looking a certain number of moves ahead (as in the diagram below). It then
+evaluates each position with the evaluation function and chooses the move that
+will lead to the best position long-term, assuming both it and its opponent
+play the best moves it can find for them. This also contributes to the amount
+of time taken to find the best move: the number of positions that must be
+evaluated in order to choose a move increases exponentially as we increase the
+search depth – that is, the number of moves ahead the engine plans. There are,
+on average, about 30 moves that can be made in any position. So, looking 4
+moves ahead, this means  the engine has to evaluate about 810,000 positions to
+find the best move. It takes time to run the evaluation function, and in
+evaluating 810,000 positions this time adds up.
 
 <img src="epq-assets/tree.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 
-Given that there are two parts to an engine, there are two ways we can try to
-speed the engine up. The evaluation function is really just a lot of
-multiplication and addition, both of which are extremely fast on computers
-already. So, we will look at speeding up the minimax search. This requires
-limiting the number of positions the engine evaluates, a process known as
-*pruning*[^2]. The specific pruning methods we will use are discussed in the
-next section.
+Given that there are two parts to an engine, there are two ways by which we
+can try to speed the engine up. The evaluation function is really just a lot of
+multiplication and addition (this is explained in more detail in Section 5),
+both of which are extremely fast on computers already. So, we will look at
+speeding up the minimax search. This requires limiting the number of positions
+the engine evaluates, a process known as *pruning*[^2]. The specific pruning
+methods we will use are discussed in the next section.
 
 ### 3. The Pruning Algorithms
 
@@ -79,11 +78,11 @@ but is theoretically faster.
 
 An engine using alpha-beta pruning starts the search normally, playing
 hypothetical moves and evaluating the resulting positions. During this process,
-however, it will find that some moves will guarantee positions of a
-higher evaluation than others. For example, consider a situation in which the
-engine is considering two moves, \\( A \\) and \\( B \\): move \\( A \\) will
-lead to good positions for the engine, whereas move \\( B \\) will lead to a
-position in which the opponent is able to eventually win the game. As long as
+however, it will find that some moves will guarantee better positions than
+others. For example, consider a situation in which the engine is considering two
+moves, \\( A \\) and \\( B \\): move \\( A \\) will lead to good positions for the
+engine, whereas move \\( B \\) will lead to a position in which the opponent is
+guaranteed to eventually win the game. As long as
 just one branch of the tree from move \\( B \\) leads to the opponent winning,
 it is assumed that the opponent will find this and therefore move \\( B \\) does
 not need to be considered. This concept is constantly applied: if a move is
@@ -112,7 +111,7 @@ can be used to rank chess players by assigning each player a number (generally
 between 0 and 3000), where a higher number represents a better player. For
 reference, the current chess world champion has an Elo rating of 2870, while a
 beginner generally has a rating of around 1000. With every game played, the
-ratings of both players is updated based upon who won and who was expected to
+ratings of both players are updated based upon who won and who was expected to
 win. For example, if a 2000-rated player wins against a 500-rated player, this
 win was expected (as the winner is rated so much higher than the loser), and so
 the winner gains few-to-no points and the loser loses few-to-no points. If
@@ -122,11 +121,11 @@ significant number. After playing many games, the ratings of both players will
 become relatively accurate and stable, with only minor changes occurring every
 now and then.
 
-Imagine, for example, a pruning algorithm that halves the amount of time taken
-to come up with a move, but always causes the engine to choose bad moves – we
+Now imagine, for example, a pruning algorithm that halves the amount of time taken
+to decide on a move, but always causes the engine to choose bad moves – we
 need a way of showing that this is, overall, a bad thing to do. Specifically,
 we need a way of scoring the pruning algorithms in order to find the best of
-those we looked at.
+those we look at.
 
 In the field of data compression there is a method for comparing compression
 algorithms known as the *Weissman score*[^6]<sup>,</sup>[^7]. I will use an
@@ -149,8 +148,7 @@ algorithms themselves.
 
 In order to calculate the scores described in the previous section, we must
 first create three engines: one without pruning, one with alpha-beta pruning,
-and one with ProbCut. Below is a high-level overview of my implementation of
-these engines.
+and one with ProbCut. Below is an overview of my implementation of these engines.
 
 The evaluation function for each engine is implemented as a neural network. A
 neural network is a basic mathematical model of a brain which takes in a series
@@ -160,37 +158,36 @@ called *weights* and the numbers added are called *biases*. It can be trained to
 give certain kinds of outputs given certain kinds of inputs by comparing its
 actual output with what the "correct" output would have been, and then changing
 its weights and biases to get closer to the correct output. If repeated many
-times with a wide range of training input and output data, the neural network
-can reliably give outputs following some intended pattern. In our case, the
-input will be a position on a chessboard, and the output will be a number
-representing who is currently winning the game and by how much (the
-evaluation).
+times with a large amount of training data, the neural network can reliably
+give outputs following some intended pattern. In our case, the input will be a
+position on a chessboard, and the output will be a number representing who is
+currently winning the game and by how much (the evaluation).
 
 In all engines, the neural network will be trained in the same way: the engine
 plays a game against itself, storing every position seen during the game, and
-finally stores the outcome of the game (white wins as 1, a draw as 0, black
+finally stores the outcome of the game (white wins as 1, draw as 0, black
 wins as -1). It then trains the neural network (by the process described above)
 with each position from the game as the input training data, and the outcome of
 the game as the output training data. Repeated with many training games, this
-results in the neural network being able to roughly predict which side is
-winning in a given position.
+results in the neural network being able to roughly predict which side will win
+in a given position.
 
-The minimax search and pruning algorithms are much simpler, as there are many
-resources available on how to implement them efficiently. As mentioned in
-Section 3, part of the statistical techniques used by ProbCut rely on data
-found through statistical analysis of previous games. This statistical analysis
-is complex and beyond the scope and subject of this project, and so I used
-values found in the original 1995 paper[^8], which introduced ProbCut.
+The minimax search and pruning algorithms are much simpler, as they are
+standard, well-documented algorithms. As mentioned in Section 3, part of the
+statistical techniques used by ProbCut rely on data found through statistical
+analysis of previous games. This statistical analysis is complex and beyond the
+scope and subject of this project, and so I used values found in the original
+1995 paper[^8] which introduced ProbCut.
 
 The process of gathering the final data needed (the mean move time and Elo
-rating for each engine) involved creating an unpruned engine and two copies
-(one with alpha-beta and one with ProbCut), and leaving all three to train (by
-the process described above) for 6 hours. I then found the mean move time of
-each by playing each engine against itself for 100 games and measuring the time
-for each move to be found, and finally taking the mean. Similarly, the Elo
-scores of each engine were found by playing the different engines against each
-other for 100 games and updating their ratings according to the algorithm
-described by Elo, mentioned in Section 4.
+rating for each engine) involved creating an unpruned engine and two copies –
+one with alpha-beta and one with ProbCut – and leaving all three to train for
+6 hours. I then found the mean move time of each by playing each engine against
+itself for 100 games and measuring the time for each move to be found, and
+finally taking the mean. Similarly, the Elo scores of each engine were found by
+playing the different engines against each other for 100 games and updating
+their ratings according to the algorithm described by Elo, mentioned in Section
+4.
 
 ### 6. Results and Conclusions
 
@@ -214,30 +211,34 @@ effective than ProbCut; the reason for this is explained in the next paragraph.
 Secondly, it can be seen that the difference in mean move time of 1 millisecond
 between alpha-beta and ProbCut results in a difference of 236 Elo rating
 points. This can be attributed to the extra games the alpha-beta pruned engine
-was able to play in the given 6 hours due to the faster move time. In contrast,
-the ProbCut pruned engine was not able to play as many games, and so it did not
-train as much, and this ultimately resulted in its lower Elo rating.
+was able to play in the given 6 hours due to the faster move time, and
+therefore faster game time overall. In contrast, the ProbCut-pruned engine was
+not able to play as many games, and so it did not train as much, ultimately
+resulting in its lower Elo rating.
 
 The reason for the slower move time with ProbCut is related to its
 implementation: the statistical techniques used in ProbCut involve calculating
 the square root of a value, a relatively slow process for computers[^9]. The
 time taken to calculate this square root outweighs any improvement ProbCut
-makes over alpha-beta, resulting in a slower mean move time.
+makes over alpha-beta, resulting in a slower mean move time. It is worth noting
+that the slow square root is not unique to my implementation, but rather is a
+problem in any implementation of ProbCut, due to the current limitations of
+computers and software.
 
 ### 7. Games
 
 Below are videos of games between me and each engine. I played as white in each
 game.
 
-The 1220-rated unpruned engine.
+The 1220-rated unpruned engine:
 
 ![Unpruned](epq-assets/game-unpruned.gif)
 
-The 1986-rated alpha-beta engine.
+The 1986-rated alpha-beta engine:
 
 ![Alpha-beta](epq-assets/game-ab.gif)
 
-The 1750-rated ProbCut engine.
+The 1750-rated ProbCut engine:
 
 ![ProbCut](epq-assets/game-probcut.gif)
 
@@ -248,7 +249,7 @@ The 1750-rated ProbCut engine.
 [^3]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
 [^4]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
 [^5]: Elo, A., 1961. 'The USCF Rating System - A Scientific Achievement', Chess Life, vol. XVI, no. 6, pp. 160-161.
-[^6]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
-[^7]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
+[^6]: The Weissman score: <https://en.wikipedia.org/wiki/Weissman_score>.
+[^7]: IEEE Spectrum. 2022. A Fictional Compression Metric Moves Into the Real World - IEEE Spectrum. [ONLINE] Available at: <https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world>.
 [^8]: Buro, M., 1995. 'ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm', ICCA Journal, vol. 18, no. 2, pp. 3-5.
 [^9]: Newton's method - Citizendium. 2022. Newton's method - Citizendium. [ONLINE] Available at: https://en.citizendium.org/wiki/Newton%27s_method#Computational_complexity.
