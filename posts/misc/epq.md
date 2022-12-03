@@ -226,10 +226,17 @@ makes over alpha-beta, resulting in a slower mean move time.
 
 ### 7. Games
 
-The following is a game between me and the 1220-rated unpruned engine.
+A game between me (as white) and the 1220-rated unpruned engine.
 
-<iframe src="https://lichess.org/embed/game/3yPaX9mn?theme=auto&bg=auto"
-width=600 height=397 frameborder=0></iframe>
+![]("game-unpruned.gif")
+
+A game between me (as white) and the 1986-rated alpha-beta engine.
+
+![]("game-ab.gif")
+
+A game between me (as white) and the 1220-rated ProbCut engine.
+
+![]("game-probcut.gif")
 
 ### 8. Footnotes, Further Reading, and References
 
