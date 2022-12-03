@@ -194,4 +194,4 @@ introduced ProbCut.
 [^4]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
 [^5]: [Weissman score](https://en.wikipedia.org/wiki/Weissman_score)
 [^6]: [A Fictional Compression Metric Moves Into the Real World](https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world#toggle-gdpr)
-[^7]: Buro, M., 1995. "ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm", ICCA, vol. 18, no. 2, pp. 3.
+[^7]: Buro, M., 1995. "ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm", ICCA, vol. 18, no. 2, pp. 3-5.
