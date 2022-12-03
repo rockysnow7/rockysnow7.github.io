@@ -4,8 +4,6 @@
 
 ---
 
-<!-- VIDEO -->
-
 ### 1. Intro
 
 Chess is a turn-based strategy board game for two players, taking place on a
@@ -226,7 +224,14 @@ the square root of a value, a relatively slow process for computers[^9]. The
 time taken to calculate this square root outweighs any improvement ProbCut
 makes over alpha-beta, resulting in a slower mean move time.
 
-### 7. Footnotes, Further Reading, and References
+### 7. Games
+
+The following is a game between me and the 1220-rated unpruned engine.
+
+<iframe src="https://lichess.org/embed/game/3yPaX9mn?theme=auto&bg=auto"
+width=600 height=397 frameborder=0></iframe>
+
+### 8. Footnotes, Further Reading, and References
 
 [^1]: El Ajedrecista was an automaton capable of playing three-piece endgames perfectly: <https://en.wikipedia.org/wiki/El_Ajedrecista>.
 [^2]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
