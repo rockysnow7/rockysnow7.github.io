@@ -6,7 +6,7 @@
 
 <!-- VIDEO -->
 
-### Intro
+### 1. Intro
 
 Chess is a turn-based strategy board game for two players, taking place on a
 grid. On a player's turn, they move one piece according to the rules of how that
@@ -30,7 +30,7 @@ we will compare the effects of two of the most popular methods.
 The next section provides an outline of how a basic chess engine works and what
 can be done to speed them up.
 
-### The Structure of a Chess Engine
+### 2. The Structure of a Chess Engine
 
 There are two main components of a chess engine, namely the *evaluation
 function* and the *minimax search* (both explained below). An engine is
@@ -73,7 +73,7 @@ limiting the number of positions the engine evaluates, a process known as
 *pruning*[^2]. The specific pruning methods we will use are discussed in the
 next section.
 
-### The Pruning Algorithms
+### 3. The Pruning Algorithms
 
 The most popular pruning algorithm[^3] for chess engines is *alpha-beta*
 pruning. Another popular algorithm is *ProbCut*, which is based upon alpha-beta
@@ -102,7 +102,7 @@ predict, based on past games, whether a branch should be ignored. This can
 allow the engine to prune branches sooner than with alpha-beta, and so could be
 an improvement.
 
-### Measuring Their Effects
+### 4. Measuring Their Effects
 
 Two things may change in the engine as a result of a pruning algorithm being
 applied: the move time and the rating. Move time is easy to measure – it can
@@ -145,11 +145,29 @@ rating increases above the unpruned rating or the pruned mean move time decrease
 below the unpruned mean move time. In this way, these values can be used to
 calculate and ultimately rank the effectiveness of pruning algorithms.
 
-### Programming
+### 5. Programming
 
-### Results
+In order to calculate the scores described in the previous section, we must
+first create three engines: one without pruning, one with alpha-beta pruning,
+and one with ProbCut. Below is a high-level overview of my implementation of
+these engines.
 
-### Conclusions
+The evaluation function for each engine is implemented as a neural network. A
+neural network is a basic mathematical model of a brain which takes in a series
+of numbers as input, performs a series of multiplications and additions on those
+numbers, and outputs the result. The numbers it multiplies the input by are
+called *weights* and the numbers added are called *biases*. It can be trained to
+give certain kinds of outputs given certain kinds of inputs by comparing its
+actual output with what the "correct" output would have been, and then changing
+its weights and biases to get closer to the correct output. If repeated many
+times with a wide range of training input data, the neural network can reliably
+give outputs following some intended pattern. In our case, the input will be a
+position on a chessboard, and the output will be a number representing who is
+currently winning the game (the evaluation).
+
+### 6. Results
+
+### 7. Conclusions
 
 ### Footnotes and Further Reading
 
