@@ -31,7 +31,7 @@ can be done to speed them up.
 ### 2. The Structure of a Chess Engine
 
 There are two main components of a chess engine, namely the *evaluation
-function* and the *minimax search*[^2]<sup>,</sup>[^3],<sup>[^4]</sup>
+function* and the *minimax search*[^2]<sup>,</sup>[^3]<sup>,</sup>[^4]
 (both explained below). An engine is just a program that runs the minimax
 search with the evaluation function and plays the resulting move.
 
