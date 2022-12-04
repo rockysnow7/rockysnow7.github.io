@@ -72,7 +72,7 @@ methods we will use are discussed in the next section.
 
 ### 3. The Pruning Algorithms
 
-The most popular pruning algorithm[^6] for chess engines is *alpha-beta*
+The most popular pruning algorithm[^6] for chess engines is *alpha-beta*[^7]
 pruning. Another popular algorithm is *ProbCut*, which is based upon alpha-beta
 but is theoretically faster.
 
@@ -92,7 +92,7 @@ reduced, and so the total time needed to perform the minimax search is reduced
 as a result.
 
 ProbCut is based upon the idea that the result of a search with a low depth works
-as a rough estimate of a search with a high depth[^7] (for example, that
+as a rough estimate of a search with a high depth[^8] (for example, that
 searching 2 moves ahead will give a similar result to searching 5 moves ahead).
 It follows a similar process to alpha-beta, but uses statistical techniques to
 predict, based on past games, whether a branch should be ignored. This can
@@ -106,7 +106,7 @@ applied: the move time and the rating. Move time is easy to measure – it can
 simply be measured in units of time, such as milliseconds.
 
 Rating, however, is slightly more complicated: the standard method of rating
-chess players is known as the *Elo* rating system[^8]. This is an algorithm which
+chess players is known as the *Elo* rating system[^9]. This is an algorithm which
 can be used to rank chess players by assigning each player a number (generally
 between 0 and 3000), where a higher number represents a better player. For
 reference, the current chess world champion has an Elo rating of 2870, while a
@@ -128,7 +128,7 @@ we need a way of scoring the pruning algorithms in order to find the best of
 those we look at.
 
 In the field of data compression there is a method for comparing compression
-algorithms known as the *Weissman score*[^9]<sup>,</sup>[^10]. I will use an
+algorithms known as the *Weissman score*[^10]<sup>,</sup>[^11]. I will use an
 adapted form of Weissman to score pruning algorithms:
 
 \\[ S = \frac{\displaystyle R}{\displaystyle \bar R} \frac{\displaystyle \bar T}{\displaystyle T} \\]
@@ -177,7 +177,7 @@ standard, well-documented algorithms. As mentioned in Section 3, part of the
 statistical techniques used by ProbCut rely on data found through statistical
 analysis of previous games. This statistical analysis is complex and beyond the
 scope and subject of this project, and so I used values found in the original
-1995 paper[^11] which introduced ProbCut.
+1995 paper[^12] which introduced ProbCut.
 
 The process of gathering the final data needed (the mean move time and Elo
 rating for each engine) involved creating an unpruned engine and two copies –
@@ -218,7 +218,7 @@ resulting in its lower Elo rating.
 
 The reason for the slower move time with ProbCut is related to its
 implementation: the statistical techniques used in ProbCut involve calculating
-the square root of a value, a relatively slow process for computers[^12]. The
+the square root of a value, a relatively slow process for computers[^13]. The
 time taken to calculate this square root outweighs any improvement ProbCut
 makes over alpha-beta, resulting in a slower mean move time. It is worth noting
 that the slow square root is not unique to my implementation, but rather is a
@@ -250,9 +250,10 @@ The 1750-rated ProbCut engine:
 [^4]: Negamax - Chessprogramming wiki. 2022. Negamax - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/Negamax>.
 [^5]: The minimax search builds a *search tree*, and so to remove positions we must *prune* the tree.
 [^6]: An algorithm is just a set of instructions which, when completed, gives some result. For example, a cake recipe is an algorithm for making cake.
-[^7]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
-[^8]: Elo, A., 1961. 'The USCF Rating System - A Scientific Achievement', Chess Life, vol. XVI, no. 6, pp. 160-161.
-[^9]: The Weissman score: <https://en.wikipedia.org/wiki/Weissman_score>.
-[^10]: IEEE Spectrum. 2022. A Fictional Compression Metric Moves Into the Real World - IEEE Spectrum. [ONLINE] Available at: <https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world>.
-[^11]: Buro, M., 1995. 'ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm', ICCA Journal, vol. 18, no. 2, pp. 3-5.
-[^12]: Newton's method - Citizendium. 2022. Newton's method - Citizendium. [ONLINE] Available at: <https://en.citizendium.org/wiki/Newton%27s_method#Computational_complexity>.
+[^7]: Alpha-Beta - Chessprogramming wiki. 2022. Alpha-Beta - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/Alpha-Beta>.
+[^8]: ProbCut - Chessprogramming wiki. 2022. ProbCut - Chessprogramming wiki. [ONLINE] Available at: <https://www.chessprogramming.org/ProbCut>.
+[^9]: Elo, A., 1961. 'The USCF Rating System - A Scientific Achievement', Chess Life, vol. XVI, no. 6, pp. 160-161.
+[^10]: The Weissman score: <https://en.wikipedia.org/wiki/Weissman_score>.
+[^11]: IEEE Spectrum. 2022. A Fictional Compression Metric Moves Into the Real World - IEEE Spectrum. [ONLINE] Available at: <https://spectrum.ieee.org/a-madefortv-compression-metric-moves-to-the-real-world>.
+[^12]: Buro, M., 1995. 'ProbCut: An Effective Selective Extension of the Alpha-Beta Algorithm', ICCA Journal, vol. 18, no. 2, pp. 3-5.
+[^13]: Newton's method - Citizendium. 2022. Newton's method - Citizendium. [ONLINE] Available at: <https://en.citizendium.org/wiki/Newton%27s_method#Computational_complexity>.
