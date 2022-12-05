@@ -159,9 +159,11 @@ give certain kinds of outputs given certain kinds of inputs by comparing its
 actual output with what the "correct" output would have been, and then changing
 its weights and biases to get closer to the correct output. If repeated many
 times with a large amount of training data, the neural network can reliably
-give outputs following some intended pattern. In our case, the input will be a
-position on a chessboard, and the output will be a number representing who is
-currently winning the game and by how much (the evaluation).
+give outputs following some intended pattern. In our case, the input will be
+64 numbers – each representing a different square on a chessboard – plus one
+number representing which side's turn it is to move. The output will be a
+number representing who is currently winning the game and by how much (the
+evaluation).
 
 In all engines, the neural network will be trained in the same way: the engine
 plays a game against itself, storing every position seen during the game, and
