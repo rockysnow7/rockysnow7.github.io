@@ -33,11 +33,15 @@ personhood – which determines whether an entity is considered a person, and 
 assigned subjectively based upon prior ideas of personhood. The question of
 what specific perceived qualities go into a person deciding that another entity
 has personhood must still be answered. The following list provides some of
-these qualities, but is by no means exhaustive.
+these qualities, in decreasing order of importance as I perceive it, but is by
+no means exhaustive, due to its subjective nature.
 
-1. A person is perceived to have consciousness.
+1. A person is perceived to have consciousness. In 
+
 2. A person is perceived to experience emotion.
+
 3. A person is perceived to have some level of rationality.
+
 4. A person is perceived to have some level of self-awareness.
 
 ### Connection and Boundaries
