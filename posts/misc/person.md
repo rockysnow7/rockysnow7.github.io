@@ -11,7 +11,9 @@ of the existence of these people, before finally explaining how one might be
 constructed. Note that the anthropomorphic language I use ('person', 'being',
 etc.) is deliberate, as will become evident throughout the essay.
 
-### People and Zombies
+### Possibility
+
+#### Definitions
 
 Before defining what a *virtual* person is, let us first define what a person
 is. Simply, a person is an entity with personhood. So, what gives a thing
@@ -21,21 +23,27 @@ inanimate objects, and other entities, we regularly treat non-human entities as
 though they have personhood. From a materialist, empirical point of view (that
 of science, and this essay), personhood does not exist objectively as some
 Platonic form, but rather is nothing more than a social construct. As such, it
-can be assigned to any entity if it is deemed fitting: if a person finds some
+can be attributed to any entity if it is deemed fitting: if a person finds some
 entity, human or otherwise, to exhibit qualities similar to other entities
-which they already believe to have personhood, then they may assign it
+which they already believe to have personhood, then they may attribute it
 personhood. While the traditional view that personhood is intrinsic to humans
 does not account for its expansion to non-human entities, this expansion cannot
 be denied. Therefore, the traditional must be rejected in favour of the
 progressive.
 
-However, the above only argues that there exists some quality –
-personhood – which determines whether an entity is considered a person, and
-which is assigned subjectively based upon prior ideas of personhood. The
-question of what specific perceived qualities go into a person deciding that
-another entity has personhood must still be answered. The following list
-provides some of these qualities, but is by no means exhaustive, due to its
-subjective nature.
+So, a virtual person is an artificial system which can be reasonably attributed
+personhood. Just as the processes of a human's brain cause the human to be
+attributed personhood by other people, so too does the software of a virtual
+person cause that system to be attributed personhood.
+
+#### Assignment of Personhood
+
+The above only argues that there exists some quality – personhood – which
+determines whether an entity is considered a person, and which is attributed
+subjectively based upon prior ideas of personhood. The question of what
+specific perceived qualities go into a person deciding that another entity has
+personhood must still be answered. The following list provides some of these
+qualities, but is by no means exhaustive, due to its subjective nature.
 
 - A person is perceived to have consciousness.
 - A person is perceived to have free will.
@@ -56,7 +64,7 @@ have consciousness, have free will, experience emotion, and modern research
 suggests many have rationality. Self-awareness is uncommon, though still
 present in some (namely some great apes, elephants, birds, and fish; notably,
 none of the specific species are commonly kept as pets). Owners of pets
-commonly assign personhood to their animals despite them not being human, due
+commonly attribute personhood to their animals despite them not being human, due
 to their perceived expression of the above qualities, among others. Many pet
 owners consider their pets to be family members (85% of dog owners and 76% of
 cat owners, as a conservative estimate[^1]), greatly supporting the claim that
@@ -91,21 +99,26 @@ wanting to get the same one back after sending it in for repairs; some even
 count their Roombas as family members, akin to pets. This extreme level of
 anthropomorphisation – attribution of consciousness, free will, emotion, and
 personality – and the strength of the connection felt by people to these
-devices surely qualifies their treatment as the assignment of personhood.
+devices surely qualifies their treatment as the attribution of personhood.
 
 As shown by the above examples, there are existing accepted instances of
-personhood being assigned to non-human entities regardless of whether they are
-believed to be alive or not. Furthermore, the nature of this personhood –
-humanlike or pet-like – is dependent upon the perceived behaviour of the
+personhood being attributed to non-human entities regardless of whether they
+are believed to be alive or not. Furthermore, the nature of this personhood –
+human-like or pet-like – is dependent upon the perceived behaviour of the
 entity.
-
-To answer the original question of what exactly a virtual person is, it may be
-defined as a piece of software which 
 
 ### Realism
 
-Given that it is possible to create an entity capable of being assigned
-personhood by a human, the question remains of how to do so. 
+Given that it is possible to create an artificial entity capable of being
+attributed personhood by a human, the question remains of how to do so.
+Specifically, this essay is interested in the design and creation of virtual
+*people*, and so perceived qualities relating to *human-like* personhood must
+be considered.
+
+...
+
+Children generally only attribute human-like personhood to a toy
+when it has a human-like face[^7],
 
 ### Connection and Boundaries
 
@@ -115,18 +128,17 @@ personhood by a human, the question remains of how to do so.
 
 ### Notes
 
-[^1] Andrea Laurent-Simpson, *Just Like Family: How Companion Animals Joined
+[^1]: Andrea Laurent-Simpson, *Just Like Family: How Companion Animals Joined
 the Household* (New York University Press, 2021), 14-15.
-[^2] Nathalia L. Gjersoe, Emily L. Hall, and Bruce Hood, "Children attribute
+[^2]: Nathalia L. Gjersoe, Emily L. Hall, and Bruce Hood, "Children attribute
 mental lives to toys when they are emotionally attached to them," *Cognitive
 Development* 34 (April-June 2015): 36.
-[^3] Ja-Young Sung et al., "'My Roomba is Rambo': Intimate Home Appliances,"
+[^3]: Ja-Young Sung et al., "'My Roomba is Rambo': Intimate Home Appliances,"
 *UbiComp 2007: Ubiquitous Computing*: 152.
-[^4] Ibid., 153.
-[^5] Ibid., 151.
-[^6] Ibid., 150-151.
-
-[^?] Gjersoe, Hall, and Hood, "Mental Lives of Toys", 37-38.
+[^4]: Ibid., 153.
+[^5]: Ibid., 151.
+[^6]: Ibid., 150-151.
+[^7]: Gjersoe, Hall, and Hood, "Mental Lives of Toys", 37-38.
     - toys are given personhood only when they are very easy to
       anthropomorphise, have human features.
 
