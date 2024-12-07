@@ -1,0 +1,312 @@
+<html>
+    <head>
+        <title>Some Baseball Data Analysis</title>
+        <link rel="stylesheet" href="../../style/tufte.min.css" />
+        <link rel="stylesheet" href="../../style/style.css" />
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <article>
+            <h1>Some Baseball Data Analysis</h1>
+            <section>
+                <p>
+                    I recently collected team-level data from the MLB API on almost all<label for="sn-1" class="margin-toggle sidenote-number"></label>
+                    <input type="checkbox" id="sn-1" class="margin-toggle" />
+                    <span class="sidenote">
+                        The data was originally intended for AI training, so I filtered out any games with missing data.
+                        In total, the dataset contains 12,778 games, or about 98% of all games played during the period.
+                    </span>
+                    Major League Baseball games played from 2016 to 2021. For each game, I collected the following information:
+                </p>
+                <ul>
+                    <li>The number of runs scored by each team.</li>
+                    <li>Average hitting, pitching, and fielding statistics for each team over the previous 30 days.</li>
+                </ul>
+                <p>
+                    This amounts to 195 features for each game.
+                    The dataset can be found here:
+                    <a href="https://github.com/rockysnow7/baseball/blob/master/data/data.csv" target="_blank">data.csv</a>.
+                    The main project, which defines the underlying data structures and allows you to gather data for other seasons, can be found here:
+                    <a href="https://github.com/rockysnow7/baseball" target="_blank">rockysnow7/baseball</a>.
+                    Below are a few interesting findings from its analysis.
+                </p>
+            </section>
+            <section>
+                <h2>Home Field Advantage</h2>
+                <table>
+                    <tr>
+                        <th>Season</th>
+                        <th>Mean Runs per Game (Home Team)</th>
+                        <th>Mean Runs per Game (Away Team)</th>
+                        <th>Difference</th>
+                    </tr>
+                    <tr>
+                        <td>2016</td>
+                        <td>4.552</td>
+                        <td>4.407</td>
+                        <td>0.144</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>4.768</td>
+                        <td>4.537</td>
+                        <td>0.231</td>
+                    </tr>
+                    <tr>
+                        <td>2018</td>
+                        <td>4.514</td>
+                        <td>4.367</td>
+                        <td>0.148</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>4.813</td>
+                        <td>4.860</td>
+                        <td>–0.048</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>4.719</td>
+                        <td>4.566</td>
+                        <td>0.152</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>4.619</td>
+                        <td>4.466</td>
+                        <td>0.154</td>
+                    </tr>
+                </table>
+                <p>
+                    The above table shows the mean number of runs scored per game by home and away teams in each season from 2016 to 2021.
+                    The <em>Difference</em> column shows \(MeanHomeTeamRuns - MeanAwayTeamRuns\), allowing us to quantify home field advantage in terms of runs scored.
+                    This verifies that indeed, on average, home teams score more runs than their competitors – this was most pronounced in 2017, though still quite modest.
+                </p>
+                <p>
+                    More interesting is that in 2019, away teams scored more runs on average than home teams.
+                    This is even still the case when outliers are removed (like the Giants’ 19-2 win over the Rockies on July 15, 2019, and the 50 other outlier games of 2019).
+                    I do not know the reason for this anomaly; 2019 saw speculation of a “juiced ball” leading to more home runs, which certainly would have affected the game, but surely not disproportionately in favor of either team.
+                    It is also possible that the data is incorrect, but I am confident this is not the case.
+                </p>
+                <p>However, the 2019 share of wins between home and away teams was still consistent with other seasons, as shown below.</p>
+                <table>
+                    <tr>
+                        <th>Season</th>
+                        <th>Home Team Win Rate</th>
+                    </tr>
+                    <tr>
+                        <td>2016</td>
+                        <td>53.2%</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>54.1%</td>
+                    </tr>
+                    <tr>
+                        <td>2018</td>
+                        <td>52.8%</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>52.6%</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>55.2%</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>53.9%</td>
+                    </tr>
+                </table>
+                <p>Out of interest, the 2019 season is analysed further in the next section.</p>
+            </section>
+            <section>
+                <h2>Got That Juice</h2>
+                <table>
+                    <tr>
+                        <th>Season</th>
+                        <th>Mean Runs (Home Team)</th>
+                        <th>Mean Runs (Away Team)</th>
+                        <th>Mean Home Runs (Home Team)</th>
+                        <th>Mean Home Runs (Away Team)</th>
+                    </tr>
+                    <tr>
+                        <td>2016</td>
+                        <td>114.945</td>
+                        <td>114.588</td>
+                        <td>29.630</td>
+                        <td>29.889</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>119.271</td>
+                        <td>118.879</td>
+                        <td>32.264</td>
+                        <td>32.285</td>
+                    </tr>
+                    <tr>
+                        <td>2018</td>
+                        <td>112.004</td>
+                        <td>112.155</td>
+                        <td>29.020</td>
+                        <td>29.133</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>121.663</td>
+                        <td>121.554</td>
+                        <td>35.173</td>
+                        <td>35.173</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>105.273</td>
+                        <td>104.751</td>
+                        <td>29.177</td>
+                        <td>29.034</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>114.278</td>
+                        <td>114.109</td>
+                        <td>31.034</td>
+                        <td>30.831</td>
+                    </tr>
+                </table>
+                <p>
+                    This table shows the number of runs and home runs scored by home and away teams in the 30 days leading up to each game, averaged out across each season.
+                    This is used as a proxy for the number of runs and home runs scored in each game, as that data is not available in the dataset.
+                    As expected, the number of runs and home runs scored by both teams increased in 2019, consistent with the speculation of a juiced ball that year.
+                    We can further verify that 2019 was statistically significant for the number of home runs scored by both teams with a \(t\)-test<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle" /><span class="sidenote">A \(t\)-test is a way of finding if some data point is so different to the rest of the data that it should be considered significant. It gives a \(p\)-value to the data point in question and, if \(p \lt 0.05\), it is considered significant.</span>. The results of that test are shown below<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle" /><span class="sidenote">This test also shows the 2020 season as significant in terms of various other features, but these results may be discounted due to the smaller sample size of games from that year and disruption due to the COVID-19 pandemic.</span>.
+                </p>
+                <table>
+                    <tr>
+                        <th>\(p_{\text{Home Runs Hit (Home Team)}}\)</th>
+                        <th>\(p_{\text{Home Runs Pitched (Home Team)}}\)</th>
+                        <th>\(p_{\text{Home Runs Hit (Away Team)}}\)</th>
+                        <th>\(p_{\text{Home Runs Pitched (Away Team)}}\)</th>
+                    </tr>
+                    <tr>
+                        <td>0.031</td>
+                        <td>0.038</td>
+                        <td>0.029</td>
+                        <td>0.030</td>
+                    </tr>
+                </table>
+                <p>
+                    For both home and away teams, the 2019 \(p\)-value of home runs <em>hit</em> is lower, and therefore more significant, than that of home runs <em>pitched</em>.
+                    This suggests that whatever change was made to the game in 2019 to result in so many more home runs than normal affected the performance of hitters more greatly than that of pitchers.
+                    This could indicate a widespread change in hitting strategy or performance for the 2019 season only, or a change in ballparks or weather, or a change in the ball itself.
+                    The latter seems far more plausible, but further analysis of play-by-plays or other data would be needed to rule out the rest.
+                </p>
+            </section>
+            <section>
+                <h2>Batting Average Is Overrated</h2>
+                <p>
+                    Batting average (AVG) is commonly used as a measure of a player’s hitting ability, but it is far from optimal.
+                    To find the most important features in predicting the number of runs scored by a team, we can calculate the Pearson correlation between each feature of the dataset and the number of runs scored by the home and away teams in each game.
+                </p>
+                <p>
+                    This will return both trivial and non-trivial correlations.
+                    For example, the number of runs scored by a team in any given game is highly correlated with the average number of runs they have scored per game in the previous 30 days.
+                    This is not useful, it is practically a tautology – “teams that score a lot of runs will score a lot of runs.”
+                    Non-trivial correlations, on the other hand, show the predictive quality of statistics such as slugging percentage (SLG), on-base percentage (OBP), and on-base plus slugging percentage (OPS), which are not so directly related to the number of runs scored.
+                    These correlations are descriptive, but if they are treated as prescriptive, they can tell us what to focus on in order to score more runs.
+                </p>
+                <p>
+                    <label for="mn-1" class="margin-toggle"></label>
+                    <input type="checkbox" id="mn-1" class="margin-toggle"/>
+                    <span class="marginnote">
+                        <img src="images/avg_score.png" alt="Correlation between AVG and Runs Scored" />
+                    </span>
+                    From these calculations, the non-trivial hitting statistics most correlated with runs scored are as below.
+                    <label for="mn-2" class="margin-toggle"></label>
+                    <input type="checkbox" id="mn-2" class="margin-toggle"/>
+                    <span class="marginnote">
+                        <img src="images/ops_score.png" alt="Correlation between OPS and Runs Scored" />
+                    </span>
+                </p>
+                <table>
+                    <tr>
+                        <th>Statistic</th>
+                        <th>Correlation with Runs (Home Team)</th>
+                        <th>Correlation with Runs (Away Team)</th>
+                    </tr>
+                    <tr>
+                        <td>OPS</td>
+                        <td>0.221</td>
+                        <td>0.202</td>
+                    </tr>
+                    <tr>
+                        <td>SLG</td>
+                        <td>0.214</td>
+                        <td>0.191</td>
+                    </tr>
+                    <tr>
+                        <td>OBP</td>
+                        <td>0.197</td>
+                        <td>0.187</td>
+                    </tr>
+                    <tr>
+                        <td>AVG</td>
+                        <td>0.190</td>
+                        <td>0.161</td>
+                    </tr>
+                </table>
+                <p><label for="mn-3" class="margin-toggle"></label><input type="checkbox" id="mn-3" class="margin-toggle"/><span class="marginnote"><img src="images/rbi_score.png" alt="Correlation between RBI and Runs Scored" /></span>From the images on the right, we can see that the grouping of data points under OPS is tighter than under AVG, intuitively showing that OPS is a better predictor of runs scored. Runs batted in (RBI), for reference, is far worse than either.</p>
+                <p>
+                    Nate Silver, a statistician and baseball analyst, described a strategy he developed as a child.
+                    <div class="epigraph">
+                        <blockquote>
+                            <p>
+                                He was, he realized, a lousy hitter.
+                                “But I also knew the pitchers couldn’t pitch better than I could hit, so I wouldn’t swing,” he recalls.
+                                “I’d walk. Then I’d steal. It was a cheap way to play, but hey, it worked.”
+                                The strategy, he says, yielded a pedestrian batting average of around .250 but an otherworldly on-base percentage that “was probably about .833.”
+                            </p>
+                            <footer>
+                                Zak Stambo, <cite>“Number cruncher.”</cite>
+                                Available
+                                <a href="https://magazine.uchicago.edu/0878/features/nate_silver.shtml" target="_blank">here</a>.
+                            </footer>
+                        </blockquote>
+                    </div>
+                </p>
+                <p>
+                    Thus, a player’s ability to get on base is more important than their ability to hit the ball, and both OBP and OPS measure this.
+                </p>
+                <p>However, even more highly correlated with a team’s runs scored than any of these are the earned run average (ERA) and walks plus hits per inning pitched (WHIP) of the opposing team: while a team’s hitting ability is important, they can only hit as well as the opposing team allows them to.</p>
+                <table>
+                    <tr>
+                        <th>Statistic</th>
+                        <th>Correlation with Runs (Home Team)</th>
+                        <th>Correlation with Runs (Away Team)</th>
+                    </tr>
+                    <tr>
+                        <td>Opponent ERA</td>
+                        <td>0.241</td>
+                        <td>0.265</td>
+                    </tr>
+                    <tr>
+                        <td>Opponent WHIP</td>
+                        <td>0.214</td>
+                        <td>0.237</td>
+                    </tr>
+                </table>
+                <p>
+                    Notice, however, that these correlations are all quite weak: it is impossible to judge the performance of a team based on any one statistic alone.
+                    The performance of a team may be better estimated by a combination of statistics from both teams, as well as other contextual information.
+                </p>
+            </section>
+            <section>
+                <h2>Conclusion</h2>
+                <p>
+                    It would be remiss not to end this by saying that baseball is a complex game, because it is a human game, and therefore statistics can only hint at its true nature – indeed, batting average only gives 20% of the picture, and the best statistic alone gives 26%. If any statistic gave 100%, we would not watch it.
+                    However, the more information we have, the better we can understand the game, and the more we can appreciate it. Why was 2019 so odd? Why did the Giants score so many runs against the Rockies? These are fascinating questions that I intend to answer with more data.
+                </p>
+                <p>If I got anything wrong, I blame the data. If I got anything right, I take full credit.</p>
+            </section>
+        </article>
+    </body>
+</html>
