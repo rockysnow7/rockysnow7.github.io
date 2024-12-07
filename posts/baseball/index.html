@@ -20,7 +20,12 @@
                 </p>
                 <ul>
                     <li>The number of runs scored by each team.</li>
-                    <li>Average hitting, pitching, and fielding statistics for each team over the previous 30 days.</li>
+                    <li>Average hitting, pitching, and fielding statistics for each team over the previous 30 days.<label for="sn-2" class="margin-toggle sidenote-number"></label>
+                    <input type="checkbox" id="sn-2" class="margin-toggle" />
+                    <span class="sidenote">
+                        These statistics are averaged across all players in the team for the previous 30 days.
+                        For example, the team’s on-base percentage is the average of all of its players’ on-base percentages over the previous 30 days.
+                    </span></li>
                 </ul>
                 <p>
                     This amounts to 195 features for each game.
@@ -178,7 +183,7 @@
                     This table shows the number of runs and home runs scored by home and away teams in the 30 days leading up to each game, averaged out across each season.
                     This is used as a proxy for the number of runs and home runs scored in each game, as that data is not available in the dataset.
                     As expected, the number of runs and home runs scored by both teams increased in 2019, consistent with the speculation of a juiced ball that year.
-                    We can further verify that 2019 was statistically significant for the number of home runs scored by both teams with a \(t\)-test<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle" /><span class="sidenote">A \(t\)-test is a way of finding if some data point is so different to the rest of the data that it should be considered significant. It gives a \(p\)-value to the data point in question and, if \(p \lt 0.05\), it is considered significant.</span>. The results of that test are shown below<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle" /><span class="sidenote">This test also shows the 2020 season as significant in terms of various other features, but these results may be discounted due to the smaller sample size of games from that year and disruption due to the COVID-19 pandemic.</span>.
+                    We can further verify that 2019 was statistically significant for the number of home runs scored by both teams with a \(t\)-test.<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle" /><span class="sidenote">A \(t\)-test is a way of finding if some data point is so different to the rest of the data that it should be considered significant. It gives a \(p\)-value to the data point in question and, if \(p \lt 0.05\), it is considered significant.</span> The results of that test are shown below.<label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle" /><span class="sidenote">This test also shows the 2020 season as significant in terms of various other features, but these results may be discounted due to the smaller sample size of games from that year and disruption due to the COVID-19 pandemic.</span>
                 </p>
                 <table>
                     <tr>
@@ -266,7 +271,7 @@
                                 The strategy, he says, yielded a pedestrian batting average of around .250 but an otherworldly on-base percentage that “was probably about .833.”
                             </p>
                             <footer>
-                                Zak Stambo, <cite>“Number cruncher.”</cite>
+                                Zak Stambor, <cite>“Number cruncher.”</cite>
                                 Available
                                 <a href="https://magazine.uchicago.edu/0878/features/nate_silver.shtml" target="_blank">here</a>.
                             </footer>
